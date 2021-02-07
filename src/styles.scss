@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+//style-reset-----------------------------------------------------------
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+//fonts-----------------------------------------------------------------
+
+@font-face {
+  font-family: "m-extra-light";
+  src: url("/assets/fonts/Montserrat-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "m-light";
+  src: url("/assets/fonts/Montserrat-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "m-reg";
+  src: url("/assets/fonts/Montserrat-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "m-med";
+  src: url("/assets/fonts/Montserrat-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "m-semi-bold";
+  src: url("/assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "m-bold";
+  src: url("/assets/fonts/Montserrat-Bold.ttf") format("truetype");
+}
