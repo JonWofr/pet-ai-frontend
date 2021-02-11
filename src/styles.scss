@@ -1,8 +1,29 @@
+@import "./colors.scss";
+
 //style-reset-----------------------------------------------------------
 
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  background-color: $alice-blue;
+}
+
+.container {
+  padding: 0 5rem 0 5rem;
+}
+
+h1 {
+  font-family: pf-reg;
+  font-weight: 400;
+}
+
+a {
+  font-family: m-bold;
+  color: $alice-blue;
+  cursor: pointer;
 }
 
 //fonts-----------------------------------------------------------------
@@ -35,4 +56,9 @@
 @font-face {
   font-family: "m-bold";
   src: url("/assets/fonts/Montserrat-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "pf-reg";
+  src: url("/assets/fonts/PlayfairDisplay-Regular.ttf") format("truetype");
 }
