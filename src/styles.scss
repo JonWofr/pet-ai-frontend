@@ -9,6 +9,10 @@
 
 body {
   background-color: $alice-blue;
+
+  &.fixed {
+    overflow: hidden;
+  }
 }
 
 .container {

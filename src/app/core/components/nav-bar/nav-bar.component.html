@@ -1,7 +1,7 @@
 
-<nav [class.transparent-background]=!shouldHaveBackground>
+<nav *ngIf="!isMobile" [class.transparent-background]=!shouldHaveBackground>
     <div class="right-nav-section">
-        <a class=nav-el><img class="logo" src="/assets/icons/petai-logo.svg" alt=""></a>
+        <a class="nav-el logo"><img class="logo" src="/assets/icons/petai-logo.svg" alt=""></a>
         <a class="nav-el">Create</a>
         <a class="nav-el">Deine Kunstwerke</a>
         <a class="nav-el">Wie es funktioniert</a>
@@ -11,6 +11,23 @@
         <a class="nav-el">Log-in</a>
         <a class="nav-el bag">Wagen <span>0</span></a>
     </div>
-
 </nav>
 
+
+<nav *ngIf="isMobile" class="mobile" [class.transparent-background]=!shouldHaveBackground>
+  <div class="top-section">
+    <div class="nav-top-container" style="text-align: left;">
+      <a class="nav-el expand-btn" (click)=toggleExpand()>
+        <img class="burger-menu" src="/assets/icons/burger-menu.svg" alt="burger-menu">
+      </a>
+    </div>
+    <div class="nav-top-container"><a class="nav-el logo"><img src="/assets/icons/petai-logo.svg" alt=""></a></div>
+    <div class="nav-top-container" style="text-align: right;"><a class="nav-el bag"><img class="bag" src="/assets/icons/bag.svg" alt="shopping bag"> <span>0</span></a></div>
+  </div>
+  <div *ngIf="isExpanded" [@inOutAnimation] class="nav-expandable-section">
+    <img class="close-btn" *ngIf="isExpanded" (click)=toggleExpand() src="/assets/icons/close.svg" alt="close-button">
+    <a class="nav-el">Create</a>
+    <a class="nav-el">Deine Kunstwerke</a>
+    <a class="nav-el">Wie es funktioniert</a>
+  </div>
+</nav>

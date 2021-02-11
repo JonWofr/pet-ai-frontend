@@ -1,7 +1,7 @@
 @import "../../../../colors.scss";
 
 nav {
-  position: sticky;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -11,15 +11,75 @@ nav {
   box-sizing: border-box;
 }
 
+nav.mobile {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1rem 1rem 1rem;
+  position: relative;
+
+  a {
+    margin: 0;
+  }
+
+  div.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    div.nav-top-container {
+      width: 33%;
+      text-align: center;
+    }
+    img.burger-menu {
+      height: 3rem;
+    }
+    a.bag {
+      align-items: baseline;
+      padding: 0.5rem;
+      img {
+        height: 2rem;
+      }
+      span {
+        margin: -0.8rem;
+      }
+    }
+  }
+
+  div.nav-expandable-section {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: $secondary-color;
+    a {
+      margin: 2rem 0 2rem 0;
+      padding: 0.5rem;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 2rem;
+      padding: 1rem;
+      height: 2.5rem;
+      cursor: pointer;
+    }
+  }
+}
+
 nav.transparent-background {
   background-color: transparent;
 }
 
 a {
   font-size: 1.2rem;
-  margin: 0 2rem 0 2rem;
+  margin: 0 1rem 0 1rem;
   color: #edf2f4;
-  img.logo {
+  &.logo img {
     height: 3.2rem;
   }
   &:last-of-type {

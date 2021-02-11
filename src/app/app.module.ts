@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { PageModule } from './core/pages/page.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {LayoutModule} from '@angular/cdk/layout';
 
 import { NgModule } from '@angular/core';
 
@@ -15,7 +17,9 @@ import { NavBarComponent } from './core/components/nav-bar/nav-bar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PageModule
+    PageModule,
+    BrowserAnimationsModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
