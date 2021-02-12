@@ -1,5 +1,5 @@
 
-<nav *ngIf="!isMobile" [class.transparent-background]=!shouldHaveBackground>
+<nav *ngIf="!isMobile" class="nav" [class.transparent-background]=!shouldHaveBackground>
     <div class="right-nav-section">
         <a class="nav-el logo"><img class="logo" src="/assets/icons/petai-logo.svg" alt=""></a>
         <a class="nav-el">Create</a>
@@ -14,7 +14,7 @@
 </nav>
 
 
-<nav *ngIf="isMobile" class="mobile" [class.transparent-background]=!shouldHaveBackground>
+<nav *ngIf="isMobile" class="nav mobile" [class.transparent-background]=!shouldHaveBackground>
   <div class="top-section">
     <div class="nav-top-container" style="text-align: left;">
       <a class="nav-el expand-btn" (click)=toggleExpand()>

@@ -1,0 +1,24 @@
+@import "../../../../../../colors.scss";
+
+.container {
+  position: relative;
+  display: flex;
+  background-color: $secondary-color;
+  color: $alice-blue;
+}
+
+#hero-wrapper {
+}
+
+div.down-indicator {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  .hero-triangle {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
