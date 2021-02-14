@@ -19,7 +19,7 @@ import { NavBarComponent } from './core/components/nav-bar/nav-bar.component';
     AppRoutingModule,
     PageModule,
     BrowserAnimationsModule,
-    LayoutModule
+    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
