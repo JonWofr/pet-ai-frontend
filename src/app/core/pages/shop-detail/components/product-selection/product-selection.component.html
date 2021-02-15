@@ -1,0 +1,65 @@
+<h3 class="title">Cheeky Chamelion Lorem Ipsum</h3>
+<div class="product-price">
+  <h4 class="selected-product">{{productSelectionForm.value.material | titlecase}} {{productSelectionForm.value.size}}cm</h4>  
+  <h4 class="selected-product-price">24,99 €</h4>
+</div>
+<hr>
+
+<form [formGroup]="productSelectionForm" class="product-selection">
+    <div class="label-section">
+        <h5>Wähle Material</h5>
+        <a>MATERIALIEN <img src="/assets/icons/info-dark.svg" alt=""></a>
+    </div>
+    <div class="selection-section">
+        <label class="selector-btn">Poster
+            <input type="radio" value="poster" formControlName="material">
+            <div class="check-indicator"></div>
+        </label>
+          <label class="selector-btn">Canvas
+            <input type="radio" value="canvas" formControlName="material">
+            <div class="check-indicator"></div>
+          </label>
+          <label class="selector-btn">Aluminium
+            <input type="radio" value="aluminium" formControlName="material">
+            <div class="check-indicator"></div>
+          </label>
+          <label class="selector-btn">Acryl
+            <input type="radio" value="acryl" formControlName="material">
+            <div class="check-indicator"></div>
+          </label>
+    </div>
+    <div class="label-section">
+        <h5>Wähle Größe</h5>
+        <a>GRÖSSEN <img src="/assets/icons/info-dark.svg" alt=""></a>
+    </div>
+    <div class="selection-section" style="margin-bottom: 24px;">
+        <label class="selector-btn">20x20cm
+            <input type="radio" value="20x20" formControlName="size">
+            <div class="check-indicator"></div>
+        </label>
+          <label class="selector-btn">30x30cm
+            <input type="radio" value="30x30" formControlName="size">
+            <div class="check-indicator"></div>
+          </label>
+          <label class="selector-btn">40x40cm
+            <input type="radio" value="40x40" formControlName="size">
+            <div class="check-indicator"></div>
+          </label>
+          <label class="selector-btn">50x50cm
+            <input type="radio" value="50x50" formControlName="size">
+            <div class="check-indicator"></div>
+          </label>
+    </div>
+
+    <div class="submit-section">
+        <div class="quantity-stepper">
+            <p class="subtract-quantity" (click)='subtractQuantity()'>-</p>
+            <input readonly type="number" value="1" formControlName="quantity">
+            <p class="add-quantity" (click)=addQuantity()>+</p>
+        </div>
+        <button type="submit">In den Einkaufswagen</button>
+    </div>
+    
+</form>
+
+<p>{{productSelectionForm.value | json}}</p>

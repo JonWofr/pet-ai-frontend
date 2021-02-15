@@ -41,6 +41,11 @@ div.product-box-wrapper {
     width: 100%;
     padding: 0rem 2rem 2rem 2rem;
     box-sizing: border-box;
+    background-image: url(/assets/images/art-watermark.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: bottom;
     .product-title {
       font-family: pf-reg;
       padding-top: 23%;
@@ -53,13 +58,6 @@ div.product-box-wrapper {
       font-size: 1rem;
       padding-top: 0.3rem;
       color: aliceblue;
-    }
-    .background-watermark {
-      position: absolute;
-      left: 0;
-      opacity: 0.03;
-      height: 100%;
-      width: 100%;
     }
   }
 

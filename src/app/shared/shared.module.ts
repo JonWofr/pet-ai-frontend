@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common"
 import { ProductBoxComponent } from "./components/product-box/product-box.component";
 import { StyleCircleComponent } from "./components/style-circle/style-circle.component";
 import { ProductFlowComponent } from "./components/product-flow/product-flow.component";
+import { ReactiveFormsModule } from "@angular/forms";
 
 
 const declarations = [
@@ -13,8 +14,8 @@ const declarations = [
 
 @NgModule({
     declarations: declarations,
-    imports: [CommonModule],
-    exports: [declarations, CommonModule],
+    imports: [CommonModule, ReactiveFormsModule],
+    exports: [declarations, CommonModule, ReactiveFormsModule],
   })
 
 export class SharedModule { }

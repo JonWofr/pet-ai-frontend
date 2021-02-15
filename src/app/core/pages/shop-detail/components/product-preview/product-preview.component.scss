@@ -1,0 +1,11 @@
+.product-preview-wrapper {
+  display: flex;
+  flex-direction: column;
+  swiper {
+    position: relative;
+    top: 0;
+    height: max-content;
+    width: 100%;
+    border-radius: 5px;
+  }
+}

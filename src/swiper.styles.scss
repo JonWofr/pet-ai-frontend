@@ -1,0 +1,12 @@
+@import "./colors.scss";
+.swiper-slide {
+  transition: 300ms;
+  background-color: gray;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.swiper-slide-thumb-active {
+  border: solid $primary-color 2px;
+  box-sizing: border-box;
+}

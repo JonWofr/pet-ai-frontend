@@ -1,0 +1,40 @@
+<div class="product-preview-wrapper">
+    <img class="product-image" src="" alt="">
+
+    <swiper
+    class="gallery-top"
+    (swiper)="onSwiperTop($event)"
+      [spaceBetween]="10"
+      (slideChange)="onSlideChange()"
+      [navigation]="true"
+      [thumbs]="{swiper: galleryThumbsSwiper}"
+    >
+      <ng-template class="square-ratio" swiperSlide><img src="/assets/images/lily-placeholder.jpeg" alt=""></ng-template>
+      <ng-template class="square-ratio" swiperSlide><img src="/assets/images/cat-art-placeholder.jpg" alt=""></ng-template>
+      <ng-template class="square-ratio" swiperSlide>Slide 3</ng-template>
+      <ng-template class="square-ratio" swiperSlide>Slide 4</ng-template>
+      <ng-template class="square-ratio" swiperSlide>Slide 5</ng-template>
+      <ng-template class="square-ratio" swiperSlide>Slide 6</ng-template>
+    </swiper>
+    <swiper
+    class="gallery-thumbs"
+      [slidesPerView]="4"
+      [spaceBetween]="10"
+      [watchSlidesVisibility]=true
+      [watchSlidesProgress]= true
+      (swiper)="onSwiper($event)"
+      (slideChange)="onSlideChange()"
+      [allowTouchMove]=false
+    >
+      <ng-template swiperSlide class="swiper-slide-thumb-active"><div class="square-ratio"><img src="/assets/images/lily-placeholder.jpeg" alt=""></div></ng-template>
+      <ng-template swiperSlide><div class="square-ratio"><img src="/assets/images/cat-art-placeholder.jpg" alt=""></div></ng-template>
+      <ng-template swiperSlide>Slide 3</ng-template>
+      <ng-template swiperSlide>Slide 4</ng-template>
+      <ng-template swiperSlide>Slide 5</ng-template>
+      <ng-template swiperSlide>Slide 6</ng-template>
+    </swiper>
+    
+   
+
+   
+</div>
