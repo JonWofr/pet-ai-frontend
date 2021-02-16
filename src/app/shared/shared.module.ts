@@ -4,17 +4,17 @@ import { ProductBoxComponent } from "./components/product-box/product-box.compon
 import { StyleCircleComponent } from "./components/style-circle/style-circle.component";
 import { ProductFlowComponent } from "./components/product-flow/product-flow.component";
 import { ReactiveFormsModule } from "@angular/forms";
-
+import { AppRoutingModule } from "../app-routing.module";
 
 const declarations = [
     ProductBoxComponent,
     StyleCircleComponent,
-    ProductFlowComponent
+    ProductFlowComponent,
 ]
 
 @NgModule({
     declarations: declarations,
-    imports: [CommonModule, ReactiveFormsModule],
+    imports: [CommonModule, ReactiveFormsModule, AppRoutingModule],
     exports: [declarations, CommonModule, ReactiveFormsModule],
   })
 

@@ -5,9 +5,9 @@ import {LayoutModule} from '@angular/cdk/layout';
 
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './core/components/nav-bar/nav-bar.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,10 +16,10 @@ import { NavBarComponent } from './core/components/nav-bar/nav-bar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     PageModule,
     BrowserAnimationsModule,
     LayoutModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

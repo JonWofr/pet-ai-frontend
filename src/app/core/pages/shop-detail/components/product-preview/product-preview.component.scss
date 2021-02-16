@@ -1,3 +1,5 @@
+@import "../../../../../../colors.scss";
+
 .product-preview-wrapper {
   display: flex;
   flex-direction: column;
@@ -7,5 +9,38 @@
     height: max-content;
     width: 100%;
     border-radius: 5px;
+  }
+}
+
+.download-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid $secondary-color;
+  font-family: m-bold;
+  font-size: 1rem;
+  color: $secondary-color;
+  padding: 0.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 200ms;
+
+  svg {
+    fill: $secondary-color;
+    margin-right: 0.6rem;
+    transition: 200ms;
+  }
+
+  &:hover {
+    background-color: $secondary-color;
+    color: aliceblue;
+
+    svg {
+      fill: aliceblue;
+      margin-right: 0.6rem;
+    }
   }
 }

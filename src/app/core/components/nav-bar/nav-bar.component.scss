@@ -10,6 +10,9 @@ nav {
   padding: 1rem 5rem 1rem 5rem;
   box-sizing: border-box;
 }
+a {
+  text-decoration: none;
+}
 
 nav.mobile {
   flex-direction: column;

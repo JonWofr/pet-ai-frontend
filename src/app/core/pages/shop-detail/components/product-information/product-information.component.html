@@ -1,0 +1,10 @@
+<div class="info-navigation">
+    <h4 [class.selected]="selected == pagination.description" (click)="changeSelection(pagination.description)">Beschreibung</h4>
+    <h4 [class.selected]="selected == pagination.shipping" (click)="changeSelection(pagination.shipping)">Lieferzeit</h4>
+    <h4 [class.selected]="selected == pagination.whyUs" (click)="changeSelection(pagination.whyUs)">Wieso wir?</h4>
+</div>
+<div [ngSwitch]="selected">
+    <div *ngSwitchCase="pagination.description">output</div>
+    <div *ngSwitchCase="pagination.shipping">output2</div>
+    <div *ngSwitchCase="pagination.whyUs">output3</div>
+</div>

@@ -9,6 +9,13 @@ div.product-box-wrapper {
   border-radius: 5px;
   overflow: hidden;
 
+  a {
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    position: absolute;
+  }
+
   div.product-image {
     background-image: url("/assets/images/cat-art-placeholder.jpg");
     background-size: cover;
@@ -20,6 +27,7 @@ div.product-box-wrapper {
     &::after {
       content: "";
       display: block;
+      z-index: 1;
       width: 100%;
       height: 100%;
       position: absolute;

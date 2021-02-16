@@ -1,10 +1,10 @@
 
 <nav *ngIf="!isMobile" class="nav" [class.transparent-background]=!shouldHaveBackground>
     <div class="right-nav-section">
-        <a class="nav-el logo"><img class="logo" src="/assets/icons/petai-logo.svg" alt=""></a>
-        <a class="nav-el">Create</a>
-        <a class="nav-el">Deine Kunstwerke</a>
-        <a class="nav-el">Wie es funktioniert</a>
+        <a class="nav-el logo"  routerLink="/home"><img class="logo" src="/assets/icons/petai-logo.svg" alt=""></a>
+        <a class="nav-el" routerLink="/create">Create</a>
+        <a class="nav-el" routerLink="/shop">Deine Kunstwerke</a>
+        <a class="nav-el" routerLink="/how-it-works">Wie es funktioniert</a>
     </div>
     
     <div class="left-nav-section">
@@ -21,13 +21,14 @@
         <img class="burger-menu" src="/assets/icons/burger-menu.svg" alt="burger-menu">
       </a>
     </div>
-    <div class="nav-top-container"><a class="nav-el logo"><img src="/assets/icons/petai-logo.svg" alt=""></a></div>
+    <div class="nav-top-container"><a class="nav-el logo" routerLink="/home"><img src="/assets/icons/petai-logo.svg" alt=""></a></div>
     <div class="nav-top-container" style="text-align: right;"><a class="nav-el bag"><img class="bag" src="/assets/icons/bag.svg" alt="shopping bag"> <span>0</span></a></div>
   </div>
   <div *ngIf="isExpanded" [@inOutAnimation] class="nav-expandable-section">
     <img class="close-btn" *ngIf="isExpanded" (click)=toggleExpand() src="/assets/icons/close.svg" alt="close-button">
-    <a class="nav-el animate__animated animate__flipInX">Create</a>
-    <a class="nav-el animate__animated animate__flipInX">Deine Kunstwerke</a>
-    <a class="nav-el animate__animated animate__flipInX">Wie es funktioniert</a>
+    <a routerLink="/home" class="nav-el animate__animated animate__flipInX" (click)=toggleExpand()>Home</a>
+    <a routerLink="/create" class="nav-el animate__animated animate__flipInX" (click)=toggleExpand()>Create</a>
+    <a routerLink="/shop" class="nav-el animate__animated animate__flipInX" (click)=toggleExpand()>Deine Kunstwerke</a>
+    <a routerLink="/how-it-works" class="nav-el animate__animated animate__flipInX" (click)=toggleExpand()>Wie es funktioniert</a>
   </div>
 </nav>

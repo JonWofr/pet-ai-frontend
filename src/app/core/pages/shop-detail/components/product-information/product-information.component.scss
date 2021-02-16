@@ -1,0 +1,25 @@
+@import "../../../../../../colors.scss";
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-navigation {
+  display: flex;
+  gap: 20px;
+  h4 {
+    font-family: m-bold;
+    font-size: 14px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    transition: 100ms;
+    color: $secondary-color;
+  }
+  h4.selected {
+    border-bottom: $secondary-color 3px solid;
+  }
+  h4:not(.selected):hover {
+    border-bottom: $dark-font-color 3px solid;
+  }
+}

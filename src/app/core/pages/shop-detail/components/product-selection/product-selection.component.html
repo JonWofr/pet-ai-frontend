@@ -1,4 +1,4 @@
-<h3 class="title">Cheeky Chamelion Lorem Ipsum</h3>
+<h3 class="title">Cheeky Chameleon Lorem Ipsum</h3>
 <div class="product-price">
   <h4 class="selected-product">{{productSelectionForm.value.material | titlecase}} {{productSelectionForm.value.size}}cm</h4>  
   <h4 class="selected-product-price">24,99 €</h4>
@@ -19,7 +19,7 @@
             <input type="radio" value="canvas" formControlName="material">
             <div class="check-indicator"></div>
           </label>
-          <label class="selector-btn">Aluminium
+          <label class="selector-btn">Alum.
             <input type="radio" value="aluminium" formControlName="material">
             <div class="check-indicator"></div>
           </label>
@@ -54,12 +54,16 @@
     <div class="submit-section">
         <div class="quantity-stepper">
             <p class="subtract-quantity" (click)='subtractQuantity()'>-</p>
-            <input readonly type="number" value="1" formControlName="quantity">
+            <p class="stepper" value="1">{{productSelectionForm.value.quantity}}</p>
             <p class="add-quantity" (click)=addQuantity()>+</p>
         </div>
-        <button type="submit">In den Einkaufswagen</button>
+        <button type="submit"><img src="/assets/icons/bag-dark.svg" alt=""> In den Einkaufswagen</button>
     </div>
     
 </form>
+
+<hr>
+
+<shop-detail-product-information></shop-detail-product-information>
 
 <p>{{productSelectionForm.value | json}}</p>
