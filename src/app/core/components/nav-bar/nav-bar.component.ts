@@ -1,6 +1,7 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
 import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/layout';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -37,7 +38,20 @@ export class NavBarComponent implements OnInit {
   isMobile = false
   isExpanded = false
 
-  constructor(public breakpointObserver: BreakpointObserver) { }
+  navShouldHide = false
+
+  constructor(public breakpointObserver: BreakpointObserver, private router: Router, private activatedRoute: ActivatedRoute) {
+    router.events.subscribe((val) => {
+      if(val instanceof NavigationEnd) {
+        console.log(val['url'])
+        if(val['url'] == '/create') {
+          this.navShouldHide = true
+        } else {
+        this.navShouldHide = false
+      }
+    }
+  });
+  }
 
   ngOnInit(): void {
     this.breakpointObserver

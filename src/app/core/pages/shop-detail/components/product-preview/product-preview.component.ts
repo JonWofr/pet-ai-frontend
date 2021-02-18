@@ -6,10 +6,11 @@ import SwiperCore, {
   Scrollbar,
   A11y,
   Thumbs,
-  Swiper
+  Swiper,
+  Controller
 } from 'swiper/core';
 
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Thumbs]);
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Thumbs, Controller]);
 
 @Component({
   selector: 'shop-detail-product-preview',
@@ -21,24 +22,35 @@ export class ProductPreviewComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
-  galleryThumbsSwiper: Swiper
+  thumbSwiper: Swiper
   galleryTopSwiper: Swiper
-
-  swiper: Swiper
-
-  onSwiper(swiper: Swiper) {
-    this.galleryTopSwiper.thumbs.swiper = swiper
-  }
 
   onSwiperTop(swiper: Swiper) {
     this.galleryTopSwiper = swiper
-    console.log(swiper.thumbs)
   }
 
-  onSlideChange() {
-    console.log('slide change');
+  onSwiperThumb(swiper: Swiper) {
+    this.thumbSwiper = swiper
+    this.galleryTopSwiper.thumbs.swiper = swiper
+  }
+
+  onSlideClick(event: any) {
+    if(event.clickedIndex !== undefined) {
+      this.galleryTopSwiper.slideTo(event.clickedIndex)
+    }
+  }
+
+  slideToNext(right: boolean) {
+    if(right) {
+      this.galleryTopSwiper.slideNext()
+    } else {
+    this.galleryTopSwiper.slidePrev()
+    }
+    
+    
   }
 
 }

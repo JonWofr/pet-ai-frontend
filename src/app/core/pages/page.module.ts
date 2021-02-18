@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { SharedModule } from "src/app/shared/shared.module";
 import { CreateComponent } from "./create/create.component";
+import { CreateModule } from "./create/create.module";
 import { HomeComponent } from "./home/home.component";
 import { HomeModule } from "./home/home.module";
 import { HowItWorksComponent } from "./how-it-works/how-it-works.component";
@@ -18,7 +19,7 @@ const declarations = [
 
 @NgModule({
     declarations: declarations,
-    imports: [HomeModule, SharedModule, ShopDetailModule],
+    imports: [HomeModule, SharedModule, ShopDetailModule, CreateModule],
     exports: declarations,
   })
 

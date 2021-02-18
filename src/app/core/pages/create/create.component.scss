@@ -1,0 +1,61 @@
+@import "../../../../colors.scss";
+
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.slider {
+  display: block;
+  flex: 1;
+}
+
+button.back-button {
+  top: 0;
+  left: 0;
+  position: absolute;
+  outline: none;
+  border: none;
+  z-index: 10;
+  background-color: rgba(51, 51, 51, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: m-bold;
+  color: $alice-blue;
+  border-radius: 0 5px 5px 0;
+  svg {
+    margin-right: 5px;
+    transform: rotate(180deg);
+    fill: $alice-blue;
+  }
+}
+
+button.finished-btn {
+  bottom: 1rem;
+  position: absolute;
+  outline: none;
+  background-color: $primary-color;
+  border: none;
+  font-family: m-bold;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  color: aliceblue;
+  padding: 0.8rem;
+  cursor: pointer;
+  transition: 200ms;
+  left: 2rem;
+  right: 2rem;
+  top: unset;
+  height: unset;
+  width: calc(100% - 4rem);
+
+  &.low-visibility {
+    opacity: 0.5;
+  }
+}

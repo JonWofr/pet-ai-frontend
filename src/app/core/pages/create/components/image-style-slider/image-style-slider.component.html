@@ -1,0 +1,47 @@
+<div class="slider-wrapper">
+
+    <div class="img-style-toggle">
+        <button class="toggle-btn toggle-active" [class.toggle-active]=imageActive (click)="toggleImage(true)">Bilder</button>
+        <button class="toggle-btn" [class.toggle-active]=!imageActive (click)="toggleImage(false)">Styles</button>
+    </div>
+    
+<swiper
+    *ngIf="!imageActive"
+    class="swiper-img-style"
+    [spaceBetween]="16"
+    freeMode=true
+    slidesPerView= 3
+    direction= 'horizontal'
+    [@enterAnimationRight]
+    (click)=selectedStyle($event)
+    >
+    <ng-template swiperSlide class="style-slide"><div><shared-style-circle></shared-style-circle></div></ng-template>
+    <ng-template swiperSlide class="style-slide"><div><shared-style-circle></shared-style-circle></div></ng-template>
+    <ng-template swiperSlide class="style-slide"><div><shared-style-circle></shared-style-circle></div></ng-template>
+    <ng-template swiperSlide class="style-slide"><div><shared-style-circle></shared-style-circle></div></ng-template>
+    <ng-template swiperSlide class="style-slide"><div><shared-style-circle></shared-style-circle></div></ng-template>
+    <ng-template swiperSlide class="style-slide"><div><shared-style-circle></shared-style-circle></div></ng-template>
+    <ng-template swiperSlide class="style-slide"><div><shared-style-circle></shared-style-circle></div></ng-template>
+</swiper>
+
+<swiper
+    *ngIf="imageActive"
+    class="swiper-img-style img-swiper"
+    [spaceBetween]="16"
+    freeMode=true
+    slidesPerView= 2
+    direction= 'horizontal'
+    [@enterAnimationRight]
+    >
+    <ng-template swiperSlide><div class="img-slide square-ratio"><img src="/assets/images/cat-art-placeholder.jpg" alt=""></div></ng-template>
+    <ng-template swiperSlide><div class="img-slide square-ratio"><img src="/assets/images/lily-placeholder.jpeg" alt=""></div></ng-template>
+    <ng-template swiperSlide><div class="img-slide square-ratio"><img src="/assets/images/lily-horizontal.jpg" alt=""></div></ng-template>
+    <ng-template swiperSlide><div class="img-slide square-ratio"><img src="/assets/images/cat-art-placeholder.jpg" alt=""></div></ng-template>
+    <ng-template swiperSlide><div class="img-slide square-ratio"><img src="/assets/images/cat-art-placeholder.jpg" alt=""></div></ng-template>
+    <ng-template swiperSlide><div class="img-slide square-ratio"><img src="/assets/images/cat-art-placeholder.jpg" alt=""></div></ng-template>
+    <ng-template swiperSlide><div class="img-slide square-ratio"><img src="/assets/images/lily-placeholder.jpeg" alt=""></div></ng-template>
+    <ng-template swiperSlide><div class="img-slide square-ratio"><img src="/assets/images/cat-art-placeholder.jpg" alt=""></div></ng-template>
+    <ng-template swiperSlide><div class="img-slide square-ratio"><img src="/assets/images/cat-art-placeholder.jpg" alt=""></div></ng-template>
+    <ng-template swiperSlide><div class="img-slide square-ratio"><img src="/assets/images/cat-art-placeholder.jpg" alt=""></div></ng-template>
+</swiper>
+</div>
