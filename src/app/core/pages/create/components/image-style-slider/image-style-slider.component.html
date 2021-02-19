@@ -1,47 +1,115 @@
 <div class="slider-wrapper">
+  <div class="img-style-toggle">
+    <button
+      class="toggle-btn toggle-active"
+      [class.toggle-active]="imageActive"
+      (click)="toggleImage(true)"
+    >
+      Bilder
+    </button>
+    <button
+      class="toggle-btn"
+      [class.toggle-active]="!imageActive"
+      (click)="toggleImage(false)"
+    >
+      Styles
+    </button>
+  </div>
 
-    <div class="img-style-toggle">
-        <button class="toggle-btn toggle-active" [class.toggle-active]=imageActive (click)="toggleImage(true)">Bilder</button>
-        <button class="toggle-btn" [class.toggle-active]=!imageActive (click)="toggleImage(false)">Styles</button>
+  <!-- <swiper
+    [class.hide]="imageActive"
+    class="swiper-img-style style-swiper animate__animated animate__fadeInRightBig"
+    [spaceBetween]="16"
+    freeMode="true"
+    slidesPerView="4"
+    direction="horizontal"
+    (click)="selectedStyle($event)"
+  >
+    <ng-template swiperSlide class="style-slide"
+      ><div><shared-style-circle></shared-style-circle></div
+    ></ng-template>
+    <ng-template swiperSlide class="style-slide"
+      ><div><shared-style-circle></shared-style-circle></div
+    ></ng-template>
+    <ng-template swiperSlide class="style-slide"
+      ><div><shared-style-circle></shared-style-circle></div
+    ></ng-template>
+    <ng-template swiperSlide class="style-slide"
+      ><div><shared-style-circle></shared-style-circle></div
+    ></ng-template>
+    <ng-template swiperSlide class="style-slide"
+      ><div><shared-style-circle></shared-style-circle></div
+    ></ng-template>
+    <ng-template swiperSlide class="style-slide"
+      ><div><shared-style-circle></shared-style-circle></div
+    ></ng-template>
+    <ng-template swiperSlide class="style-slide"
+      ><div><shared-style-circle></shared-style-circle></div
+    ></ng-template>
+  </swiper> -->
+
+  <div
+    [class.hide]="imageActive"
+    [class.animate__fadeInRightBig]="isHorizontalMode"
+    [class.animate__fadeInUpBig]="!isHorizontalMode"
+    class="animate__animated swiper-container swiper-img-style style-swiper"
+  >
+    <div class="swiper-wrapper">
+      <shared-style-circle class="swiper-slide"></shared-style-circle>
+      <shared-style-circle class="swiper-slide"></shared-style-circle>
+      <shared-style-circle class="swiper-slide"></shared-style-circle>
+      <shared-style-circle class="swiper-slide"></shared-style-circle>
+      <shared-style-circle class="swiper-slide"></shared-style-circle>
+      <shared-style-circle class="swiper-slide"></shared-style-circle>
+      <shared-style-circle class="swiper-slide"></shared-style-circle>
+      <shared-style-circle class="swiper-slide"></shared-style-circle>
+      <shared-style-circle class="swiper-slide"></shared-style-circle>
+      <shared-style-circle class="swiper-slide"></shared-style-circle>
+      <shared-style-circle class="swiper-slide"></shared-style-circle>
+      <shared-style-circle class="swiper-slide"></shared-style-circle>
     </div>
-    
-<swiper
-    *ngIf="!imageActive"
-    class="swiper-img-style"
-    [spaceBetween]="16"
-    freeMode=true
-    slidesPerView= 3
-    direction= 'horizontal'
-    [@enterAnimationRight]
-    (click)=selectedStyle($event)
-    >
-    <ng-template swiperSlide class="style-slide"><div><shared-style-circle></shared-style-circle></div></ng-template>
-    <ng-template swiperSlide class="style-slide"><div><shared-style-circle></shared-style-circle></div></ng-template>
-    <ng-template swiperSlide class="style-slide"><div><shared-style-circle></shared-style-circle></div></ng-template>
-    <ng-template swiperSlide class="style-slide"><div><shared-style-circle></shared-style-circle></div></ng-template>
-    <ng-template swiperSlide class="style-slide"><div><shared-style-circle></shared-style-circle></div></ng-template>
-    <ng-template swiperSlide class="style-slide"><div><shared-style-circle></shared-style-circle></div></ng-template>
-    <ng-template swiperSlide class="style-slide"><div><shared-style-circle></shared-style-circle></div></ng-template>
-</swiper>
+  </div>
 
-<swiper
-    *ngIf="imageActive"
-    class="swiper-img-style img-swiper"
-    [spaceBetween]="16"
-    freeMode=true
-    slidesPerView= 2
-    direction= 'horizontal'
-    [@enterAnimationRight]
-    >
-    <ng-template swiperSlide><div class="img-slide square-ratio"><img src="/assets/images/cat-art-placeholder.jpg" alt=""></div></ng-template>
-    <ng-template swiperSlide><div class="img-slide square-ratio"><img src="/assets/images/lily-placeholder.jpeg" alt=""></div></ng-template>
-    <ng-template swiperSlide><div class="img-slide square-ratio"><img src="/assets/images/lily-horizontal.jpg" alt=""></div></ng-template>
-    <ng-template swiperSlide><div class="img-slide square-ratio"><img src="/assets/images/cat-art-placeholder.jpg" alt=""></div></ng-template>
-    <ng-template swiperSlide><div class="img-slide square-ratio"><img src="/assets/images/cat-art-placeholder.jpg" alt=""></div></ng-template>
-    <ng-template swiperSlide><div class="img-slide square-ratio"><img src="/assets/images/cat-art-placeholder.jpg" alt=""></div></ng-template>
-    <ng-template swiperSlide><div class="img-slide square-ratio"><img src="/assets/images/lily-placeholder.jpeg" alt=""></div></ng-template>
-    <ng-template swiperSlide><div class="img-slide square-ratio"><img src="/assets/images/cat-art-placeholder.jpg" alt=""></div></ng-template>
-    <ng-template swiperSlide><div class="img-slide square-ratio"><img src="/assets/images/cat-art-placeholder.jpg" alt=""></div></ng-template>
-    <ng-template swiperSlide><div class="img-slide square-ratio"><img src="/assets/images/cat-art-placeholder.jpg" alt=""></div></ng-template>
-</swiper>
+  <div
+    [class.hide]="!imageActive"
+    [class.animate__fadeInRightBig]="isHorizontalMode"
+    [class.animate__fadeInUpBig]="!isHorizontalMode"
+    class="animate__animated swiper-container swiper-img-style img-swiper"
+  >
+    <div class="swiper-wrapper">
+      <img
+        src="/assets/images/lily-placeholder.jpeg"
+        alt=""
+        class="swiper-slide"
+      />
+      <img
+        src="/assets/images/cat-art-placeholder.jpg"
+        alt=""
+        class="swiper-slide"
+      />
+      <img
+        src="/assets/images/lily-horizontal.jpg"
+        alt=""
+        class="swiper-slide"
+      />
+      <img
+        src="/assets/images/lily-placeholder.jpeg"
+        alt=""
+        class="swiper-slide"
+      />
+      <img
+        src="/assets/images/cat-art-placeholder.jpg"
+        alt=""
+        class="swiper-slide"
+      />
+      <img
+        src="/assets/images/lily-horizontal.jpg"
+        alt=""
+        class="swiper-slide"
+      />
+    </div>
+  </div>
+  <button [class.low-visibility]="!styleSelected" class="finished-btn">
+    Fertig
+  </button>
 </div>

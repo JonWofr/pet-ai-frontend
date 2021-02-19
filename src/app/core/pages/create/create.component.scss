@@ -11,51 +11,67 @@
   flex: 1;
 }
 
-button.back-button {
-  top: 0;
-  left: 0;
-  position: absolute;
-  outline: none;
-  border: none;
-  z-index: 10;
-  background-color: rgba(51, 51, 51, 0.2);
-  backdrop-filter: blur(10px);
-  padding: 1rem;
-  padding-right: 2rem;
-  padding-left: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: m-bold;
-  color: $alice-blue;
-  border-radius: 0 5px 5px 0;
-  svg {
-    margin-right: 5px;
-    transform: rotate(180deg);
-    fill: $alice-blue;
+.container {
+  padding: 0;
+}
+
+img.watermark,
+button.finished-btn {
+  display: none;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 1000px) {
+  :host {
+    flex-direction: row;
+  }
+
+  .container {
+    order: 2;
+    width: 45%;
+    margin: auto;
+    max-width: 720px;
+    position: relative;
+  }
+
+  .slider {
+    flex: none;
+    width: 40%;
+    max-width: 400px;
+    order: 1;
+  }
+
+  img {
+    border-radius: 5px;
+  }
+
+  img.watermark {
+    display: flex;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  button.finished-btn {
+    display: block;
+    margin-top: 2rem;
+    outline: none;
+    background-color: $primary-color;
+    border: none;
+    font-family: m-bold;
+    border-radius: 3px;
+    font-size: 1.2rem;
+    color: aliceblue;
+    padding: 0.8rem;
+    cursor: pointer;
+    transition: 200ms;
+    height: unset;
+    width: 100%;
+    &.low-visibility {
+      opacity: 0.5;
+    }
   }
 }
 
-button.finished-btn {
-  bottom: 1rem;
-  position: absolute;
-  outline: none;
-  background-color: $primary-color;
-  border: none;
-  font-family: m-bold;
-  border-radius: 3px;
-  font-size: 1.2rem;
-  color: aliceblue;
-  padding: 0.8rem;
-  cursor: pointer;
-  transition: 200ms;
-  left: 2rem;
-  right: 2rem;
-  top: unset;
-  height: unset;
-  width: calc(100% - 4rem);
-
-  &.low-visibility {
-    opacity: 0.5;
-  }
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
 }

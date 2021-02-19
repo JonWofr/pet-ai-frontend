@@ -1,0 +1,59 @@
+@import "../../../../colors.scss";
+
+.cart-wrapper {
+  position: absolute;
+  padding: 1rem;
+  width: 50%;
+  max-width: 350px;
+  background-color: $darkest-font-color;
+  z-index: 5;
+  right: 0;
+  top: 0;
+  padding-top: 7rem;
+  height: calc(100% - 7rem);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+
+    h2 {
+      margin-right: auto;
+      font-family: pf-reg;
+      font-weight: 400;
+      color: $alice-blue;
+      margin-left: 1rem;
+    }
+
+    img.bag-icon {
+      height: 2rem;
+    }
+
+    img.close-btn {
+    }
+  }
+
+  .items {
+    .item {
+      display: grid;
+      grid-gap: 1rem;
+      width: 100%;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      img.product-image {
+        border-radius: 5px;
+      }
+      .item-details {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .price-box {
+          display: flex;
+          margin-top: auto;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}

@@ -7,25 +7,28 @@ div.slider-wrapper {
   box-sizing: border-box;
   position: relative;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.swiper-img-style {
+  width: 100%;
+  flex: 1;
+  height: 0;
 }
 
 .swiper-img-style.img-swiper {
-  height: 50%;
-  .img-slide {
-    display: flex;
-    background-color: rgba(51, 51, 51);
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    overflow: hidden;
-    img {
-      object-fit: cover;
-    }
+  .swiper-slide {
+    height: 100%;
+    width: auto;
   }
 }
 
-.img-slide img {
-  width: 100%;
+.swiper-img-style.style-swiper {
+  .swiper-slide {
+    height: 100%;
+    width: auto;
+  }
 }
 
 .img-style-toggle {
@@ -49,6 +52,67 @@ div.slider-wrapper {
     &.toggle-active {
       background-color: aliceblue;
       color: $darkest-font-color;
+    }
+  }
+}
+
+button.finished-btn {
+  margin-top: 2rem;
+  outline: none;
+  background-color: $primary-color;
+  border: none;
+  font-family: m-bold;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  color: aliceblue;
+  padding: 0.8rem;
+  cursor: pointer;
+  transition: 200ms;
+  height: unset;
+  width: calc(100% - 2rem);
+
+  &.low-visibility {
+    opacity: 0.5;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 1000px) {
+  div.slider-wrapper {
+    padding: 2rem;
+    padding-bottom: 0;
+
+    .swiper-img-style.img-swiper {
+      .swiper-slide {
+        height: auto;
+        width: 100%;
+      }
+    }
+
+    .swiper-img-style.style-swiper {
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-slide {
+        height: fit-content;
+        width: calc(50% - 16px);
+      }
+    }
+
+    div.img-style-toggle {
+      padding-right: 0;
+    }
+    button.finished-btn {
+      display: none;
     }
   }
 }

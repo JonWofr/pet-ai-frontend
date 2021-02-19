@@ -38,17 +38,12 @@ export class NavBarComponent implements OnInit {
   isMobile = false
   isExpanded = false
 
-  navShouldHide = false
+  lightVersion = false
 
   constructor(public breakpointObserver: BreakpointObserver, private router: Router, private activatedRoute: ActivatedRoute) {
     router.events.subscribe((val) => {
       if(val instanceof NavigationEnd) {
-        console.log(val['url'])
-        if(val['url'] == '/create') {
-          this.navShouldHide = true
-        } else {
-        this.navShouldHide = false
-      }
+        this.lightVersion = val['url'] == '/create'
     }
   });
   }
