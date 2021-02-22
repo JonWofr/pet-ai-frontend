@@ -1,0 +1,52 @@
+@import "../../../../../../colors.scss";
+
+.photo-guide-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  margin-top: 4rem;
+  background-color: $secondary-color;
+  align-items: center;
+  img.demo-image {
+    width: 100%;
+  }
+  .info-text {
+    color: white;
+    background-color: $secondary-color;
+    ul {
+      padding: 2rem 3rem;
+      h2 {
+        font-family: pf-reg;
+        font-weight: 500;
+        font-size: 2.4rem;
+        margin-bottom: 3rem;
+      }
+      li {
+        font-family: m-light;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        margin-bottom: 2.5rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+        img.decorater {
+          height: 3rem;
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1500px) {
+  .photo-guide-wrapper {
+    grid-template-columns: 1fr 1fr;
+    .info-text {
+      ul {
+        padding-left: 5rem;
+      }
+    }
+  }
+}

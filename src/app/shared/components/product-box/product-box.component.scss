@@ -5,7 +5,7 @@ div.product-box-wrapper {
   max-width: 450px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: 0px 3px 6px #00000029;
   border-radius: 5px;
   overflow: hidden;
 
@@ -45,11 +45,11 @@ div.product-box-wrapper {
   div.product-info {
     position: relative;
     z-index: 1;
-    background-color: $secondary-color;
+    background-color: white;
     width: 100%;
     padding: 0rem 2rem 2rem 2rem;
     box-sizing: border-box;
-    background-image: url(/assets/images/art-watermark.svg);
+    //background-image: url(/assets/images/art-watermark.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position-x: center;
@@ -59,13 +59,13 @@ div.product-box-wrapper {
       padding-top: 23%;
       font-size: 1.6rem;
       font-weight: 400;
-      color: aliceblue;
+      color: $secondary-color;
     }
     .price {
       font-family: m-reg;
       font-size: 1rem;
       padding-top: 0.3rem;
-      color: aliceblue;
+      color: $secondary-color;
     }
   }
 

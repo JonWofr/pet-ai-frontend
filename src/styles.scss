@@ -91,6 +91,11 @@ a {
 }
 
 @font-face {
+  font-family: "m-light-it";
+  src: url("/assets/fonts/Montserrat-LightItalic.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "m-reg";
   src: url("/assets/fonts/Montserrat-Regular.ttf") format("truetype");
 }
@@ -137,6 +142,12 @@ $grid-breakpoints: (
 @media (min-width: 768px) {
   html {
     font-size: 16px;
+  }
+}
+
+@media (min-width: 2000px) {
+  html {
+    font-size: 18px;
   }
 }
 

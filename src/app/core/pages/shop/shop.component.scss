@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  .static {
+    height: 40%;
+    background-color: lightblue;
+  }
+  .flex-1 {
+    flex: 1;
+    background-color: lightcoral;
+    display: flex;
+    flex-direction: column;
+
+    .static-inner {
+      height: 70%;
+      background-color: lightgreen;
+    }
+    .flex-inner {
+      background-color: lightpink;
+      flex: 1;
+      flex-wrap: wrap;
+      height: 0;
+      width: fit-content;
+      overflow: hidden;
+      img {
+        height: 100%;
+      }
+    }
+  }
+}

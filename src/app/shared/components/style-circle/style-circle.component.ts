@@ -9,6 +9,8 @@ export class StyleCircleComponent implements OnInit {
 
   @Input() isSelected = false
 
+  @Input() verticalLayout = false
+
   constructor() { }
 
   ngOnInit(): void {

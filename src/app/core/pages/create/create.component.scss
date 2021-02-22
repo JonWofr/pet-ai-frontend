@@ -20,7 +20,13 @@ button.finished-btn {
   display: none;
 }
 
-// Medium devices (tablets, 768px and up)
+@media (min-width: 720px) {
+  .container {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
 @media (min-width: 1000px) {
   :host {
     flex-direction: row;

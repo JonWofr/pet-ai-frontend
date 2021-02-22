@@ -5,11 +5,13 @@ import { StyleCircleComponent } from "./components/style-circle/style-circle.com
 import { ProductFlowComponent } from "./components/product-flow/product-flow.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from "../app-routing.module";
+import { HeadlineComponent } from "./components/headline/headline.component";
 
 const declarations = [
     ProductBoxComponent,
     StyleCircleComponent,
     ProductFlowComponent,
+    HeadlineComponent
 ]
 
 @NgModule({

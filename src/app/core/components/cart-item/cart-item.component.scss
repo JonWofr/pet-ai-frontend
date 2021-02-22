@@ -1,0 +1,96 @@
+@import "../../../../colors.scss";
+.item {
+  background-color: aliceblue;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: grid;
+  grid-gap: 1rem;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  img.product-image {
+    border-radius: 5px;
+  }
+  img.trash-icon {
+    padding: 5px;
+    position: absolute;
+    width: auto;
+    top: 5px;
+    right: 5px;
+    left: unset;
+    height: 19px;
+    background-color: $secondary-color;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .item-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    h3 {
+      font-family: pf-reg;
+      font-size: 14px;
+
+      color: $secondary-color;
+    }
+    h4 {
+      font-size: 14px;
+      font-family: m-bold;
+      color: $secondary-color;
+      margin-bottom: 1rem;
+    }
+    .price-box {
+      display: flex;
+      margin-top: auto;
+      justify-content: space-between;
+      align-items: center;
+      p.price {
+        font-family: m-reg;
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        font-size: 14px;
+        span {
+          font-size: 0.8rem;
+        }
+      }
+
+      .quantity-stepper {
+        color: $secondary-color;
+        box-sizing: border-box;
+        width: fit-content;
+        border-radius: 3px;
+        display: flex;
+        border: solid $secondary-color 1px;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+          position: relative;
+          z-index: 0;
+          font-family: m-reg;
+          font-size: 1rem;
+          padding: 0.625rem;
+          cursor: pointer;
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+
+        p.stepper {
+          padding: 0;
+          position: relative;
+          z-index: 1;
+          display: flex;
+          text-align: center;
+          font-family: m-light;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

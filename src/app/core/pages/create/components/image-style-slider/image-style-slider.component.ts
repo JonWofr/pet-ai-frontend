@@ -1,6 +1,6 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Breakpoints } from '@angular/cdk/layout';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 import SwiperCore, {
   Navigation,
@@ -12,7 +12,6 @@ import SwiperCore, {
   Swiper,
   Mousewheel
 } from 'swiper/core';
-import { SwiperEvents } from 'swiper/types';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Thumbs, Controller, Mousewheel]);
 
@@ -36,51 +35,50 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Thumbs, Controller, Mou
     ),
   ]
 })
-export class ImageStyleSliderComponent implements OnInit {
+export class ImageStyleSliderComponent implements OnInit, AfterViewInit {
 
   constructor() { }
 
   isHorizontalMode = true;
+
+  imgSwiper : Swiper
+  styleSwiper : Swiper
+
+  imageActive = true
+  styleSelected = false
   
   ngOnInit(): void {
-    var imgSwiper = new Swiper('.img-swiper', {
+  }
+
+  ngAfterViewInit() {
+    this.isHorizontalMode = this.imgSwiper.params.direction == 'horizontal'
+  }
+
+  @ViewChild('imgSwiper') set _imgSwiper(_: ElementRef) {
+    this.imgSwiper = new Swiper('.img-swiper', {
       slidesPerView: 'auto',
       spaceBetween: 16,
       freeMode: true,
       mousewheel: true,
+      slidesOffsetAfter: 16,
       breakpoints: {
         1000: {
           direction: 'vertical',
         }
       }
     });
-    this.isHorizontalMode = imgSwiper.params.direction == 'horizontal'
+    this.isHorizontalMode = this.imgSwiper.params.direction == 'horizontal'
+  }
 
-
-    var styleSwiper = new Swiper('.style-swiper', {
-      slidesPerView: 4,
+  @ViewChild('styleSwiper') set _styleSwiper(_: ElementRef) {
+    this.styleSwiper = new Swiper('.style-swiper', {
+      slidesPerView: 'auto',
       spaceBetween: 16,
       freeMode: true,
       mousewheel: true,
+      slidesOffsetAfter: 16,
       breakpoints: {
-        // when window width is >= 320px
-        330: {
-          slidesPerView: 3,
-          spaceBetween: 16
-        },
-        // when window width is >= 480px
-        480: {
-          slidesPerView: 3,
-          spaceBetween: 16
-        },
-        // when window width is >= 640px
-        640: {
-          slidesPerView: 4,
-          spaceBetween: 16
-        },
-
         1000: {
-          slidesPerView: 'auto',
           direction: 'vertical',
           slidesPerColumnFill: 'row',
           spaceBetween:32,
@@ -92,22 +90,11 @@ export class ImageStyleSliderComponent implements OnInit {
         click: ((swiper: Swiper) => {
           console.log(swiper.clickedIndex)
           this.styleSelected = true
-          styleSwiper.update()
         }),
-        init: ((swiper: Swiper) => {
-          setTimeout(()=> {
-            swiper.update()
-          }, 2000)
-        })
       }
     });
+    this.isHorizontalMode = this.styleSwiper.params.direction == 'horizontal'
   }
-
-  
-
-  imageActive = true
-
-  styleSelected = false
 
   toggleImage(shouldShowImages: boolean) {
     this.imageActive = shouldShowImages

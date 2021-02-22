@@ -5,6 +5,7 @@ import { CreateModule } from "./create/create.module";
 import { HomeComponent } from "./home/home.component";
 import { HomeModule } from "./home/home.module";
 import { HowItWorksComponent } from "./how-it-works/how-it-works.component";
+import { HowItWorksModule } from "./how-it-works/how-it-works.module";
 import { ShopDetailComponent } from "./shop-detail/shop-detail.component";
 import { ShopDetailModule } from "./shop-detail/shop-detail.module";
 import { ShopComponent } from "./shop/shop.component";
@@ -19,7 +20,7 @@ const declarations = [
 
 @NgModule({
     declarations: declarations,
-    imports: [HomeModule, SharedModule, ShopDetailModule, CreateModule],
+    imports: [HomeModule, SharedModule, ShopDetailModule, CreateModule, HowItWorksModule],
     exports: declarations,
   })
 

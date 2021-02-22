@@ -9,12 +9,14 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './core/components/nav-bar/nav-bar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CartComponent } from './core/components/cart/cart.component';
+import { CartItemComponent } from './core/components/cart-item/cart-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     CartComponent,
+    CartItemComponent,
   ],
   imports: [
     BrowserModule,
