@@ -113,7 +113,7 @@ img.res-demo-lg {
   .res-demo-wrapper {
     margin-right: auto;
     margin-left: auto;
-    max-width: 1400px;
+    max-width: 1200px;
     grid-template-columns: 1fr 1fr;
     grid-gap: 4rem;
   }
@@ -126,7 +126,7 @@ img.res-demo-lg {
     grid-template-columns: 1fr 1fr;
     margin-right: auto;
     margin-left: auto;
-    max-width: 1400px;
+    max-width: 1200px;
     grid-gap: 4rem;
 
     .product-demo img {
@@ -156,7 +156,7 @@ img.res-demo-lg {
   img.res-demo-lg {
     display: block;
     width: 100%;
-    height: 900px;
+    height: 500px;
     object-fit: cover;
   }
 }
