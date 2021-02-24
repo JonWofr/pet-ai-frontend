@@ -30,6 +30,9 @@
       img {
         margin-left: 0;
         margin-right: auto;
+        width: 100%;
+        max-width: 33rem;
+        max-height: 33rem;
       }
     }
 
@@ -44,7 +47,7 @@
 
     img {
       width: 100%;
-      max-width: 400px;
+      max-width: 33rem;
       position: relative;
       margin-left: auto;
       object-fit: contain;
@@ -188,4 +191,8 @@
   #text-column-3 {
     order: 5;
   }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
 }

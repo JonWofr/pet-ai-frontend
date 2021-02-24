@@ -4,7 +4,7 @@
   position: relative;
   align-items: center;
   box-sizing: border-box;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
   display: flex;
   justify-content: center;
 }
@@ -18,7 +18,7 @@
   .style-image {
     display: block;
     border-radius: 50%;
-    border: aliceblue 0.2rem solid;
+    border: aliceblue 0.1rem solid;
     height: 100%;
     width: auto;
     object-fit: contain;

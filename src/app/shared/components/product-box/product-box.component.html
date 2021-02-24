@@ -1,5 +1,8 @@
-<div class="product-box-wrapper">
-  <div class="product-image"><a routerLink="/shop/2"></a></div>
+<div class="product-box-wrapper" (click)="openDetail($event)">
+  <div class="product-image">
+    <img class="styled-image" src="/assets/images/golden-styled.jpg" alt="" />
+    <img class="arrow" src="/assets/icons/arrow-down.svg" alt="" />
+  </div>
 
   <div class="product-info">
     <div class="styles">
@@ -16,7 +19,8 @@
         class="style"
       ></shared-style-circle>
     </div>
-    <h3 class="product-title">Thinking Cat Lorem Ipsum</h3>
+    <h3 class="product-title">The Dog Look</h3>
+    <hr />
     <p class="price">Poster ab 19.99€</p>
   </div>
 </div>

@@ -6,23 +6,29 @@ div.product-box-wrapper {
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0px 3px 6px #00000029;
-  border-radius: 5px;
+  border-radius: 8px;
   overflow: hidden;
 
-  a {
-    width: 100%;
+  img.styled-image {
     height: 100%;
-    z-index: 5;
-    position: absolute;
+    width: 100%;
+    object-fit: cover;
   }
 
   div.product-image {
-    background-image: url("/assets/images/cat-art-placeholder.jpg");
-    background-size: cover;
-    height: 20rem;
+    height: 17rem;
     width: 100%;
     position: relative;
     cursor: pointer;
+
+    img.arrow {
+      position: absolute;
+      top: 1rem;
+      right: 0;
+      height: 4rem;
+      transform: rotate(-90deg);
+      z-index: 10;
+    }
 
     &::after {
       content: "";
@@ -45,27 +51,33 @@ div.product-box-wrapper {
   div.product-info {
     position: relative;
     z-index: 1;
-    background-color: white;
+    background-color: $secondary-color;
     width: 100%;
     padding: 0rem 2rem 2rem 2rem;
     box-sizing: border-box;
-    //background-image: url(/assets/images/art-watermark.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: bottom;
+    text-align: center;
     .product-title {
       font-family: pf-reg;
-      padding-top: 23%;
-      font-size: 1.6rem;
+      padding-top: 30%;
+      font-size: 2rem;
       font-weight: 400;
-      color: $secondary-color;
+      color: white;
+    }
+    hr {
+      width: 3rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      border: $primary-color solid 1px;
+      background-color: $primary-color;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
     }
     .price {
-      font-family: m-reg;
+      font-family: m-light;
       font-size: 1rem;
-      padding-top: 0.3rem;
-      color: $secondary-color;
+      color: white;
+      margin-bottom: 2rem;
     }
   }
 
@@ -75,8 +87,9 @@ div.product-box-wrapper {
     left: 0;
     box-sizing: border-box;
     padding: inherit;
+    z-index: 5;
     transform: translateY(-35%);
-    grid-gap: 2rem;
+    grid-gap: 1.5rem;
     grid-template-columns: repeat(3, minmax(50px, 1fr));
     width: 100%;
   }

@@ -17,6 +17,8 @@
   </div>
 
   <div
+    [class.animate__fadeInUpBig]="!isHorizontalMode"
+    [class.animate__fadeInRightBig]="isHorizontalMode"
     *ngIf="!imageActive"
     class="animate__animated swiper-container swiper-img-style style-swiper"
     #styleSwiper
@@ -76,13 +78,12 @@
       ></shared-style-circle>
     </div>
   </div>
-  <!-- 
-  [class.animate__fadeInRightBig]="isHorizontalMode"
-    [class.animate__fadeInUpBig]="!isHorizontalMode" -->
   <div
     *ngIf="imageActive"
     class="animate__animated swiper-container swiper-img-style img-swiper"
     #imgSwiper
+    [class.animate__fadeInUpBig]="!isHorizontalMode"
+    [class.animate__fadeInRightBig]="isHorizontalMode"
   >
     <div class="swiper-wrapper">
       <img

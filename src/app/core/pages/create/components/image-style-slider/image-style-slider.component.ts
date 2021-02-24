@@ -1,5 +1,3 @@
-import { animate, style, transition, trigger } from '@angular/animations';
-import { Breakpoints } from '@angular/cdk/layout';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 import SwiperCore, {
@@ -19,21 +17,6 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Thumbs, Controller, Mou
   selector: 'create-image-style-slider',
   templateUrl: './image-style-slider.component.html',
   styleUrls: ['./image-style-slider.component.scss'],
-  animations: [
-    trigger(
-      'enterAnimationRight', 
-      [
-        transition(
-          ':enter', 
-          [
-            style({ transform: 'translateX(100%)' }),
-            animate('0.3s ease-out', 
-                    style({ transform: 'translateX(0)' }))
-          ]
-        )
-      ]
-    ),
-  ]
 })
 export class ImageStyleSliderComponent implements OnInit, AfterViewInit {
 
@@ -54,13 +37,22 @@ export class ImageStyleSliderComponent implements OnInit, AfterViewInit {
     this.isHorizontalMode = this.imgSwiper.params.direction == 'horizontal'
   }
 
-  @ViewChild('imgSwiper') set _imgSwiper(_: ElementRef) {
-    this.imgSwiper = new Swiper('.img-swiper', {
+  @ViewChild('imgSwiper') set _imgSwiper(el: ElementRef) {
+    console.log('imgSwiper init', el)
+    if(el) {
+      this.imgSwiper = new Swiper('.img-swiper', {
       slidesPerView: 'auto',
       spaceBetween: 16,
       freeMode: true,
       mousewheel: true,
       slidesOffsetAfter: 16,
+      on: {
+        afterInit: (() => {
+          setTimeout(() => {
+            this.imgSwiper.update()
+          })
+        })
+      },
       breakpoints: {
         1000: {
           direction: 'vertical',
@@ -68,32 +60,40 @@ export class ImageStyleSliderComponent implements OnInit, AfterViewInit {
       }
     });
     this.isHorizontalMode = this.imgSwiper.params.direction == 'horizontal'
+    }
   }
 
-  @ViewChild('styleSwiper') set _styleSwiper(_: ElementRef) {
-    this.styleSwiper = new Swiper('.style-swiper', {
-      slidesPerView: 'auto',
-      spaceBetween: 16,
-      freeMode: true,
-      mousewheel: true,
-      slidesOffsetAfter: 16,
-      breakpoints: {
-        1000: {
-          direction: 'vertical',
-          slidesPerColumnFill: 'row',
-          spaceBetween:32,
-          slidesPerColumn: 2,
-          
+  @ViewChild('styleSwiper') set _styleSwiper(el: ElementRef) {
+    if(el) {
+      this.styleSwiper = new Swiper('.style-swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        freeMode: true,
+        mousewheel: true,
+        slidesOffsetAfter: 16,
+        breakpoints: {
+          1000: {
+            direction: 'vertical',
+            slidesPerColumnFill: 'row',
+            spaceBetween:32,
+            slidesPerColumn: 2,
+            
+          }
+        },
+        on: {
+          click: ((swiper: Swiper) => {
+            console.log(swiper.clickedIndex)
+            this.styleSelected = true
+          }),
+          afterInit: (() => {
+            setTimeout(() => {
+              this.styleSwiper.update()
+            })
+          })
         }
-      },
-      on: {
-        click: ((swiper: Swiper) => {
-          console.log(swiper.clickedIndex)
-          this.styleSelected = true
-        }),
-      }
-    });
-    this.isHorizontalMode = this.styleSwiper.params.direction == 'horizontal'
+      });
+      this.isHorizontalMode = this.styleSwiper.params.direction == 'horizontal'
+    }
   }
 
   toggleImage(shouldShowImages: boolean) {
