@@ -3,7 +3,11 @@
   <div class="stripe"></div>
 
   <div id="image-column-1" class="image-column">
-    <div class="colored-backround"></div>
+    <div
+      [@slideInOutLeft]
+      (@slideInOutLeft.done)="animEnd($event)"
+      class="colored-backround"
+    ></div>
     <img src="/assets/images/golden-unstyled.png" alt="" />
   </div>
   <div id="text-column-1" class="text-column">
@@ -13,18 +17,20 @@
     <div class="text">
       <h2>Such dir ein Bild und einen Art-Style aus</h2>
       <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-        amet. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-        dolor sit amet.
+        Wir sind sicher du hast ein tolles Bild von deinem Tier auf Instagram
+        oder auf deinem Handy. Ansonsten kannst du auch ein neues machen. Scroll
+        ganz nach unten für unseren Foto-Guide, um herauszufinden wie du das
+        perfekte Foto hochlädst.
       </p>
     </div>
   </div>
 
   <div id="image-column-2" class="image-column right">
-    <div class="colored-backround"></div>
+    <div
+      [@slideInOutRight]
+      (@slideInOutRight.done)="animEnd($event)"
+      class="colored-backround"
+    ></div>
     <img src="/assets/images/golden-styled.jpg" alt="" />
   </div>
   <div id="text-column-2" class="text-column right">
@@ -34,16 +40,19 @@
     <div class="text">
       <h2>Unser Algorithmus zeichnet Dein Bild</h2>
       <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-        clita kasd gubergren.
+        Dein Bild wird von unserem Algorithmus aufwendig berechnet. Das dauert
+        in der Regel ein paar Sekunden. Wenn du mit einem Style nicht zufrieden
+        bist, dann wende einfach kostenlos einen anderen Style an.
       </p>
     </div>
   </div>
 
   <div id="image-column-3" class="image-column">
-    <div class="colored-backround"></div>
+    <div
+      [@slideInOutLeft]
+      (@slideInOutLeft.done)="animEnd($event)"
+      class="colored-backround"
+    ></div>
     <img src="/assets/images/golden-styled-preview.png" alt="" />
   </div>
   <div id="text-column-3" class="text-column">
@@ -53,12 +62,11 @@
     <div class="text">
       <h2>Schau dir Dein Kunstwerk als Gemälde an</h2>
       <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-        amet. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-        dolor sit amet.
+        Suchst du das perfekte Geschenk oder möchtest du einfach dein Tierchen
+        für Immer bei dir im Haus verewigt haben? Mit unserer Webseite kannst du
+        dein Foto in ein Gemälde deiner Wahl verwandeln! Von Van Gogh bis
+        Picasso kannst du dir den Art-Style aussuchen, der am besten zu deinem
+        Tier und deiner Wohnung passt!
       </p>
     </div>
   </div>

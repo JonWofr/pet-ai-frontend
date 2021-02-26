@@ -59,10 +59,12 @@
     padding-right: 2rem;
     text-align: center;
     display: flex;
+    opacity: 1;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     width: 100%;
+    transition: 200ms;
     .bubble-wrapper {
       display: none;
     }
@@ -135,6 +137,10 @@
       padding: 0;
       padding-right: 1rem;
       text-align: left;
+      opacity: 0;
+      &.visible {
+        opacity: 1;
+      }
       &.right {
         padding-left: 1rem;
         padding-right: 0;

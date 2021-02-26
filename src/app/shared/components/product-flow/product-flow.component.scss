@@ -1,13 +1,19 @@
 @import "../../../../colors.scss";
-:host.max-width-wrapper {
-  max-width: 1980px;
+:host {
+  display: block;
+  width: 100%;
+  position: relative;
+  background-color: white;
 }
 
 .product-flow-wrapper {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  max-width: 1980px;
   padding: 2rem 0 2rem 0;
+  margin-left: auto;
+  margin-right: auto;
   justify-content: center;
   align-items: center;
 
@@ -65,34 +71,19 @@
   }
 }
 
-.wave-background {
-  display: flex;
+.wave {
   position: absolute;
-  flex-direction: column;
   width: 100%;
   left: 0;
   top: 0;
   z-index: -1;
-  img {
-    width: 100%;
-    object-fit: cover;
-    align-self: flex-start;
-    transform: translateY(5px);
-    &:last-child {
-      transform: rotate(180deg) translateY(5px);
-    }
-  }
-  div {
-    width: 100%;
-    height: 100vh;
-    background-color: white;
+  object-fit: cover;
+  &:last-child {
+    top: unset;
+    bottom: -100;
+    transform: rotate(-180deg) translateY(1px);
   }
 }
 
 @media (min-width: 800px) {
-  .wave-background {
-    div {
-      height: 30vh;
-    }
-  }
 }
