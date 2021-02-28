@@ -1,12 +1,30 @@
-<div id=hero-wrapper class="container">
-    Hero works
-    <div class="down-indicator">
-        <svg class="hero-triangle" width="100%" viewBox="0 0 1000 130" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-            <g transform="matrix(6.02801,0,0,1.10577,-1249.3,-104.976)">
-                <path d="M373.141,94.935L373.141,212.5L207.249,212.5L373.141,94.935Z" style="fill:rgb(237,242,244);"/>
-            </g>
-        </svg>
+<div id="hero-wrapper">
+  <div class="container">
+    <h1>Wir zeichnen dein Haustier</h1>
+    <h2>
+      Lass es von Picasso, Vincent Van Gogh <br />
+      oder Leonardo Da Vinci
+      <span>kostenlos</span> zeichnen!
+    </h2>
+  </div>
+  <div class="button-hero-flat">
+    <div class="button-wrapper">
+      <button
+        *ngIf="true"
+        routerLink="/create"
+        [class.sticky]="isCallToActionSticky"
+      >
+        <ng-container *ngIf="!isCallToActionSticky"
+          >ERSTELLE DEIN KUNSTWERK</ng-container
+        >
+        <ng-container *ngIf="isCallToActionSticky"
+          ><img src="/assets/icons/paint-white.svg" alt=""
+        /></ng-container>
+      </button>
     </div>
-</div>
+  </div>
 
-<div style="height: 10vh;"></div>
+  <img class="cat-eyes" src="/assets/images/cat-eyes-unstyled.png" alt="" />
+  <img src="/assets/images/cat-eyes-styled.png" alt="" class="cat-eyes" />
+</div>
+<img class="wave" src="/assets/images/wave-background.svg" alt="" />

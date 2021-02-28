@@ -31,7 +31,7 @@ hr {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 1rem;
   h5 {
     font-family: pf-reg;
     font-size: 18px;
@@ -57,7 +57,7 @@ hr {
   width: 100%;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 
   .selector-btn input {
     position: absolute;
@@ -73,7 +73,7 @@ hr {
     cursor: pointer;
     text-align: center;
     padding: 1rem;
-    font-family: m-bold;
+    font-family: m-reg;
     font-size: 1rem;
     color: $dark-font-color;
 
@@ -102,7 +102,7 @@ hr {
   display: grid;
   gap: 24px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 
   button {
     outline: none;

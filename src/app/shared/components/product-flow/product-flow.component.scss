@@ -4,6 +4,7 @@
   width: 100%;
   position: relative;
   background-color: white;
+  margin-bottom: 10rem;
 }
 
 .product-flow-wrapper {
@@ -11,7 +12,7 @@
   flex-wrap: wrap;
   width: 100%;
   max-width: 1980px;
-  padding: 2rem 0 2rem 0;
+  padding: 4rem 0 4rem 0;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
@@ -75,15 +76,18 @@
   position: absolute;
   width: 100%;
   left: 0;
-  top: 0;
   z-index: -1;
-  object-fit: cover;
+  object-fit: fill;
+  transform: translateY(-95%);
   &:last-child {
     top: unset;
     bottom: -100;
-    transform: rotate(-180deg) translateY(1px);
+    transform: rotate(-180deg) translateY(2px);
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1224px) {
+  :host {
+    margin-bottom: 14rem;
+  }
 }

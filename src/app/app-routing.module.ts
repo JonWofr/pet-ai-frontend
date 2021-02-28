@@ -9,11 +9,11 @@ import { ShopComponent } from './core/pages/shop/shop.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/home', pathMatch: 'full'},
-  { path: 'home', component: HomeComponent },
-  { path: 'create', component: CreateComponent },
-  { path: 'shop', component: ShopComponent },
-  { path: 'shop/:id', component: ShopDetailComponent},
-  { path: 'how-it-works', component: HowItWorksComponent }
+  { path: 'home', component: HomeComponent, data: {animation: 'homePage'} },
+  { path: 'create', component: CreateComponent, data: {animation: 'createPage'}},
+  { path: 'shop', component: ShopComponent, data: {animation: 'shopPage'}},
+  { path: 'shop/:id', component: ShopDetailComponent, data: {animation: 'shopDetailPage'}},
+  { path: 'how-it-works', component: HowItWorksComponent, data: {animation: 'howItWorksPage'}}
 ];
 
 @NgModule({

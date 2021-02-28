@@ -1,6 +1,4 @@
-<app-nav-bar [shouldHaveBackground]='true'></app-nav-bar>
+<app-nav-bar [shouldHaveBackground]="true"></app-nav-bar>
 <main>
-    <router-outlet></router-outlet>
+  <router-outlet #outlet="outlet"></router-outlet>
 </main>
-
-

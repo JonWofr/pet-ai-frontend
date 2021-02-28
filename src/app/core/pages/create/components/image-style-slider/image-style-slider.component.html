@@ -133,7 +133,11 @@
       />
     </div>
   </div>
-  <button [class.low-visibility]="!styleSelected" class="finished-btn">
+  <button
+    [class.low-visibility]="!styleSelected"
+    class="finished-btn"
+    (click)="finished()"
+  >
     Fertig
   </button>
 </div>

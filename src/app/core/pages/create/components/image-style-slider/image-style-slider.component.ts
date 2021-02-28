@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 import SwiperCore, {
   Navigation,
@@ -20,7 +21,7 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Thumbs, Controller, Mou
 })
 export class ImageStyleSliderComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   isHorizontalMode = true;
 
@@ -98,5 +99,14 @@ export class ImageStyleSliderComponent implements OnInit, AfterViewInit {
 
   toggleImage(shouldShowImages: boolean) {
     this.imageActive = shouldShowImages
+  }
+
+  finished() {
+    if(this.styleSelected) {
+      this.route.navigate(['shop/1'])
+    } else {
+      alert('please select a style first')
+    }
+    
   }
 }
