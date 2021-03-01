@@ -1,143 +1,113 @@
 <div class="slider-wrapper">
-  <div class="img-style-toggle">
+  <div class="overflow-hide">
+    <div class="img-style-toggle">
+      <button
+        class="toggle-btn toggle-active"
+        [class.toggle-active]="imageActive"
+        (click)="toggleImage(true)"
+      >
+        Bilder
+      </button>
+      <button
+        class="toggle-btn"
+        [class.toggle-active]="!imageActive"
+        (click)="toggleImage(false)"
+      >
+        Styles
+      </button>
+    </div>
     <button
-      class="toggle-btn toggle-active"
-      [class.toggle-active]="imageActive"
-      (click)="toggleImage(true)"
+      class="add-btn"
+      [class.add-btn-hide]="!imageActive"
+      (click)="openUploadModal()"
     >
-      Bilder
+      +
     </button>
-    <button
-      class="toggle-btn"
-      [class.toggle-active]="!imageActive"
-      (click)="toggleImage(false)"
-    >
-      Styles
-    </button>
-  </div>
 
-  <div
-    [class.animate__fadeInUpBig]="!isHorizontalMode"
-    [class.animate__fadeInRightBig]="isHorizontalMode"
-    *ngIf="!imageActive"
-    class="animate__animated swiper-container swiper-img-style style-swiper"
-    #styleSwiper
-  >
-    <div class="swiper-wrapper">
-      <shared-style-circle
-        [verticalLayout]="!isHorizontalMode"
-        class="swiper-slide"
-      ></shared-style-circle>
-      <shared-style-circle
-        [verticalLayout]="!isHorizontalMode"
-        class="swiper-slide"
-      ></shared-style-circle>
-      <shared-style-circle
-        [verticalLayout]="!isHorizontalMode"
-        class="swiper-slide"
-      ></shared-style-circle>
-      <shared-style-circle
-        [verticalLayout]="!isHorizontalMode"
-        class="swiper-slide"
-      ></shared-style-circle>
-      <shared-style-circle
-        [verticalLayout]="!isHorizontalMode"
-        class="swiper-slide"
-      ></shared-style-circle>
-      <shared-style-circle
-        [verticalLayout]="!isHorizontalMode"
-        class="swiper-slide"
-      ></shared-style-circle>
-      <shared-style-circle
-        [verticalLayout]="!isHorizontalMode"
-        class="swiper-slide"
-      ></shared-style-circle>
-      <shared-style-circle
-        [verticalLayout]="!isHorizontalMode"
-        class="swiper-slide"
-      ></shared-style-circle>
-      <shared-style-circle
-        [verticalLayout]="!isHorizontalMode"
-        class="swiper-slide"
-      ></shared-style-circle>
-      <shared-style-circle
-        [verticalLayout]="!isHorizontalMode"
-        class="swiper-slide"
-      ></shared-style-circle>
-      <shared-style-circle
-        [verticalLayout]="!isHorizontalMode"
-        class="swiper-slide"
-      ></shared-style-circle>
-      <shared-style-circle
-        [verticalLayout]="!isHorizontalMode"
-        class="swiper-slide"
-      ></shared-style-circle>
-      <shared-style-circle
-        [verticalLayout]="!isHorizontalMode"
-        class="swiper-slide"
-      ></shared-style-circle>
+    <div
+      [class.animate__fadeInUpBig]="!isHorizontalMode"
+      [class.animate__fadeInRightBig]="isHorizontalMode"
+      *ngIf="!imageActive"
+      class="animate__animated swiper-container swiper-img-style style-swiper"
+      #styleSwiper
+    >
+      <div class="swiper-wrapper">
+        <shared-style-circle
+          [verticalLayout]="!isHorizontalMode"
+          class="swiper-slide"
+        ></shared-style-circle>
+        <shared-style-circle
+          [verticalLayout]="!isHorizontalMode"
+          class="swiper-slide"
+        ></shared-style-circle>
+        <shared-style-circle
+          [verticalLayout]="!isHorizontalMode"
+          class="swiper-slide"
+        ></shared-style-circle>
+        <shared-style-circle
+          [verticalLayout]="!isHorizontalMode"
+          class="swiper-slide"
+        ></shared-style-circle>
+        <shared-style-circle
+          [verticalLayout]="!isHorizontalMode"
+          class="swiper-slide"
+        ></shared-style-circle>
+        <shared-style-circle
+          [verticalLayout]="!isHorizontalMode"
+          class="swiper-slide"
+        ></shared-style-circle>
+        <shared-style-circle
+          [verticalLayout]="!isHorizontalMode"
+          class="swiper-slide"
+        ></shared-style-circle>
+        <shared-style-circle
+          [verticalLayout]="!isHorizontalMode"
+          class="swiper-slide"
+        ></shared-style-circle>
+        <shared-style-circle
+          [verticalLayout]="!isHorizontalMode"
+          class="swiper-slide"
+        ></shared-style-circle>
+        <shared-style-circle
+          [verticalLayout]="!isHorizontalMode"
+          class="swiper-slide"
+        ></shared-style-circle>
+        <shared-style-circle
+          [verticalLayout]="!isHorizontalMode"
+          class="swiper-slide"
+        ></shared-style-circle>
+        <shared-style-circle
+          [verticalLayout]="!isHorizontalMode"
+          class="swiper-slide"
+        ></shared-style-circle>
+        <shared-style-circle
+          [verticalLayout]="!isHorizontalMode"
+          class="swiper-slide"
+        ></shared-style-circle>
+      </div>
     </div>
-  </div>
-  <div
-    *ngIf="imageActive"
-    class="animate__animated swiper-container swiper-img-style img-swiper"
-    #imgSwiper
-    [class.animate__fadeInUpBig]="!isHorizontalMode"
-    [class.animate__fadeInRightBig]="isHorizontalMode"
-  >
-    <div class="swiper-wrapper">
-      <img
-        src="/assets/images/lily-placeholder.jpeg"
-        alt=""
-        class="swiper-slide"
-      />
-      <img
-        src="/assets/images/cat-art-placeholder.jpg"
-        alt=""
-        class="swiper-slide"
-      />
-      <img
-        src="/assets/images/lily-horizontal.jpg"
-        alt=""
-        class="swiper-slide"
-      />
-      <img
-        src="/assets/images/lily-placeholder.jpeg"
-        alt=""
-        class="swiper-slide"
-      />
-      <img
-        src="/assets/images/cat-art-placeholder.jpg"
-        alt=""
-        class="swiper-slide"
-      />
-      <img
-        src="/assets/images/lily-horizontal.jpg"
-        alt=""
-        class="swiper-slide"
-      />
-      <img
-        src="/assets/images/lily-placeholder.jpeg"
-        alt=""
-        class="swiper-slide"
-      />
-      <img
-        src="/assets/images/cat-art-placeholder.jpg"
-        alt=""
-        class="swiper-slide"
-      />
-      <img
-        src="/assets/images/lily-horizontal.jpg"
-        alt=""
-        class="swiper-slide"
-      />
+    <div
+      *ngIf="imageActive && contentImages.length > 0"
+      class="animate__animated swiper-container swiper-img-style img-swiper"
+      #imgSwiper
+      [class.animate__fadeInUpBig]="!isHorizontalMode"
+      [class.animate__fadeInRightBig]="isHorizontalMode"
+    >
+      <div class="swiper-wrapper">
+        <img
+          *ngFor="let contentImage of contentImages"
+          [src]="contentImage.image.publicUrl"
+          alt=""
+          class="swiper-slide"
+        />
+      </div>
     </div>
+    <button
+      [class.low-visibility]="!styleSelected"
+      class="finished-btn"
+      (click)="finished()"
+    >
+      Fertig
+    </button>
   </div>
-  <button
-    [class.low-visibility]="!styleSelected"
-    class="finished-btn"
-    (click)="finished()"
-  >
-    Fertig
-  </button>
 </div>

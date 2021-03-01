@@ -7,5 +7,10 @@
     flex: 1;
     position: relative;
     overflow-y: scroll;
+
+    div {
+      height: 100%;
+      width: 100%;
+    }
   }
 }

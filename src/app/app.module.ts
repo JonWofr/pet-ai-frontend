@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { PageModule } from './core/pages/page.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {LayoutModule} from '@angular/cdk/layout';
@@ -20,6 +21,7 @@ import { CartItemComponent } from './core/components/cart-item/cart-item.compone
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     PageModule,
     BrowserAnimationsModule,
     LayoutModule,

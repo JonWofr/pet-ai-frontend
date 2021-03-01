@@ -1,4 +1,6 @@
 <app-nav-bar [shouldHaveBackground]="true"></app-nav-bar>
 <main>
-  <router-outlet #outlet="outlet"></router-outlet>
+  <div [@slideInRoutingAnimation]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
 </main>

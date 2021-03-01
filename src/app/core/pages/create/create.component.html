@@ -6,4 +6,11 @@
   <button class="finished-btn">Fertig</button>
 </div>
 
-<create-image-style-slider class="slider"></create-image-style-slider>
+<create-image-style-slider
+  (addImageBtnClicked)="openUploadModal()"
+  class="slider"
+></create-image-style-slider>
+
+<create-upload-modal
+  (uploadedImage)="uploadImage($event)"
+></create-upload-modal>
