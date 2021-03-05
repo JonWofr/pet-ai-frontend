@@ -3,11 +3,7 @@
   [class.selected]="isSelected"
   [class.vertical-layout]="verticalLayout"
 >
-  <img
-    class="style-image"
-    src="/assets/images/van-gogh-palceholder.jpg"
-    alt=""
-  />
+  <img class="style-image" [src]="styleImage?.image?.publicUrl" alt="" />
 
   <!-- <img
     *ngIf="isSelected"
@@ -16,4 +12,4 @@
     alt="selected style"
   /> -->
 </div>
-<p class="style-title">V. Van Gogh</p>
+<p class="style-title">{{ styleImage?.artist }}</p>

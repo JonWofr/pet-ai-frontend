@@ -3,13 +3,15 @@ import {
   ElementRef,
   EventEmitter,
   Input,
+  IterableDiffer,
+  IterableDiffers,
   OnInit,
   Output,
   ViewChild,
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContentImage } from 'src/app/core/models/content-image.model';
-import { ContentImageService } from 'src/app/core/services/content-image.service';
+import { StyleImage } from 'src/app/core/models/style-image.model';
 
 import SwiperCore, {
   Navigation,
@@ -38,12 +40,39 @@ SwiperCore.use([
   styleUrls: ['./image-style-slider.component.scss'],
 })
 export class ImageStyleSliderComponent implements OnInit {
-  constructor(
-    private route: Router,
-    private contentImageService: ContentImageService
-  ) {}
+  constructor(private route: Router) {}
 
   @Output() addImageBtnClicked = new EventEmitter<void>();
+
+  @Input() selectedImageIndex = 0;
+  @Output() selectedImageIndexChange = new EventEmitter<number>();
+
+  @Input() contentImages: ContentImage[] = [];
+  @Input() styleImages: StyleImage[] = [];
+
+  _isUploadingImage: boolean;
+
+  @Input() set isUploadingImage(uploading: boolean) {
+    if (this.imgSwiper) {
+      this.imgSwiper.slideTo(0);
+      this.updateSelectedImageIndex(0);
+      setTimeout(() => {
+        this.imgSwiper.update();
+      }, 1000);
+    }
+    this._isUploadingImage = uploading;
+  }
+
+  get isUploadingImage() {
+    return this._isUploadingImage;
+  }
+
+  updateSelectedImageIndex(index: number) {
+    if (index !== undefined) {
+      this.selectedImageIndex = index;
+      this.selectedImageIndexChange.emit(index);
+    }
+  }
 
   openUploadModal() {
     this.addImageBtnClicked.emit();
@@ -57,13 +86,7 @@ export class ImageStyleSliderComponent implements OnInit {
   imageActive = true;
   styleSelected = false;
 
-  contentImages: ContentImage[] = [];
-
-  ngOnInit(): void {
-    this.contentImageService.getAll().subscribe((response) => {
-      this.contentImages = response;
-    });
-  }
+  ngOnInit(): void {}
 
   @ViewChild('swiperSlide') set swiperSlide(el: ElementRef) {}
 

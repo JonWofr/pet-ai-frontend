@@ -1,20 +1,19 @@
-@import "../../../../../../colors.scss";
+@import "../../../../colors.scss";
 
 .photo-guide-wrapper {
   display: grid;
   grid-template-columns: 1fr;
   width: 100%;
-  margin-top: 4rem;
-  background-color: $secondary-color;
+  background-color: $darkest-font-color;
   align-items: center;
   img.demo-image {
     width: 100%;
   }
   .info-text {
     color: white;
-    background-color: $secondary-color;
     ul {
       padding: 2rem 3rem;
+      padding-left: 1rem;
       h2 {
         font-family: pf-reg;
         font-weight: 500;

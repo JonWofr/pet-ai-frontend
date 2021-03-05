@@ -1,12 +1,13 @@
 <div class="photo-guide-wrapper">
   <img
+    *ngIf="displayExampleImage"
     class="demo-image"
     src="/assets/images/photo-guide-demo-image.png"
     alt=""
   />
   <div class="info-text">
     <ul>
-      <h2>Ein paar Tipps für das perfekte Foto</h2>
+      <h2 *ngIf="displayHeader">Ein paar Tipps für das perfekte Foto</h2>
       <li>
         <img class="decorater" src="/assets/icons/green-checkmark.svg" alt="" />
         Nimm das Foto auf Augenhöhe mit deinem Tier auf

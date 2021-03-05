@@ -1,6 +1,36 @@
 <div class="image-upload">
-  <h2>Bild hochladen</h2>
-  <input type="file" (change)="onChange($event)" name="" id="" />
-  <input type="checkbox" name="" id="" />
-  <img [src]="path" alt="" />
+  <div class="header">
+    <h2>Bild hochladen</h2>
+    <img (click)="onClose()" src="/assets/icons/close.svg" alt="close button" />
+  </div>
+
+  <div
+    class="input-file-upload-wrapper"
+    [class.disabled]="!dataProtectionChecked"
+  >
+    Upload
+    <input
+      type="file"
+      accept="image/*"
+      (change)="onChange($event)"
+      [disabled]="!dataProtectionChecked"
+    />
+  </div>
+
+  <label class="checkbox-container" for="data-protection"
+    >Ich akzeptiere die Datenschutzerklärung
+    <input
+      type="checkbox"
+      name="data-protection"
+      id="data-protection"
+      [(ngModel)]="dataProtectionChecked"
+    />
+    <span class="checkmark"></span>
+  </label>
+
+  <h2 class="photo-guide-headline">Foto Guide</h2>
+  <shared-photo-guide
+    [displayExampleImage]="false"
+    [displayHeader]="false"
+  ></shared-photo-guide>
 </div>

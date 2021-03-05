@@ -20,6 +20,23 @@ div.overflow-hide {
   overflow: hidden;
 }
 
+div.loading-indicator {
+  width: 50%;
+  flex: 1;
+  height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  img {
+    border-radius: 10px;
+    width: auto;
+    height: 100%;
+  }
+}
+
 .swiper-img-style {
   width: 100%;
   flex: 1;
@@ -28,13 +45,40 @@ div.overflow-hide {
 
 .swiper-img-style.img-swiper {
   .swiper-slide {
+    cursor: pointer;
     height: 100%;
     width: auto;
+    opacity: 0.6;
+    transition: 300ms;
+
+    &.selected {
+      opacity: 1;
+    }
+
+    &.loading-container {
+      width: 33%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      background-color: #f1f2f3;
+      opacity: 1;
+
+      img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 0;
+        width: 100%;
+      }
+    }
   }
 }
 
 .swiper-img-style.style-swiper {
   .swiper-slide {
+    cursor: pointer;
     height: 100%;
     width: auto;
     overflow: unset;
@@ -109,6 +153,10 @@ button.add-btn {
   z-index: -1;
   transition: 500ms;
   box-shadow: 0px 3px 6px #00000029;
+
+  img {
+    width: 3rem;
+  }
 
   &.add-btn-hide {
     left: -100%;

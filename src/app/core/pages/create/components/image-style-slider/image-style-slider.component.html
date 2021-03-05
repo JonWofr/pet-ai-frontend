@@ -21,87 +21,57 @@
       [class.add-btn-hide]="!imageActive"
       (click)="openUploadModal()"
     >
-      +
+      <img src="/assets/icons/image-add.svg" alt="" />
     </button>
 
     <div
       [class.animate__fadeInUpBig]="!isHorizontalMode"
       [class.animate__fadeInRightBig]="isHorizontalMode"
-      *ngIf="!imageActive"
+      *ngIf="!imageActive && styleImages?.length > 0"
       class="animate__animated swiper-container swiper-img-style style-swiper"
       #styleSwiper
     >
       <div class="swiper-wrapper">
         <shared-style-circle
-          [verticalLayout]="!isHorizontalMode"
-          class="swiper-slide"
-        ></shared-style-circle>
-        <shared-style-circle
-          [verticalLayout]="!isHorizontalMode"
-          class="swiper-slide"
-        ></shared-style-circle>
-        <shared-style-circle
-          [verticalLayout]="!isHorizontalMode"
-          class="swiper-slide"
-        ></shared-style-circle>
-        <shared-style-circle
-          [verticalLayout]="!isHorizontalMode"
-          class="swiper-slide"
-        ></shared-style-circle>
-        <shared-style-circle
-          [verticalLayout]="!isHorizontalMode"
-          class="swiper-slide"
-        ></shared-style-circle>
-        <shared-style-circle
-          [verticalLayout]="!isHorizontalMode"
-          class="swiper-slide"
-        ></shared-style-circle>
-        <shared-style-circle
-          [verticalLayout]="!isHorizontalMode"
-          class="swiper-slide"
-        ></shared-style-circle>
-        <shared-style-circle
-          [verticalLayout]="!isHorizontalMode"
-          class="swiper-slide"
-        ></shared-style-circle>
-        <shared-style-circle
-          [verticalLayout]="!isHorizontalMode"
-          class="swiper-slide"
-        ></shared-style-circle>
-        <shared-style-circle
-          [verticalLayout]="!isHorizontalMode"
-          class="swiper-slide"
-        ></shared-style-circle>
-        <shared-style-circle
-          [verticalLayout]="!isHorizontalMode"
-          class="swiper-slide"
-        ></shared-style-circle>
-        <shared-style-circle
-          [verticalLayout]="!isHorizontalMode"
-          class="swiper-slide"
-        ></shared-style-circle>
-        <shared-style-circle
+          *ngFor="let styleImage of styleImages"
+          [styleImage]="styleImage"
           [verticalLayout]="!isHorizontalMode"
           class="swiper-slide"
         ></shared-style-circle>
       </div>
     </div>
+
     <div
-      *ngIf="imageActive && contentImages.length > 0"
+      *ngIf="imageActive && contentImages?.length > 0"
       class="animate__animated swiper-container swiper-img-style img-swiper"
       #imgSwiper
       [class.animate__fadeInUpBig]="!isHorizontalMode"
       [class.animate__fadeInRightBig]="isHorizontalMode"
     >
       <div class="swiper-wrapper">
+        <div *ngIf="isUploadingImage" class="swiper-slide loading-container">
+          <img src="/assets/icons/loading-anim.svg" alt="lädt hoch" />
+        </div>
         <img
-          *ngFor="let contentImage of contentImages"
+          *ngFor="let contentImage of contentImages; let i = index"
+          (click)="updateSelectedImageIndex(i)"
+          [class.selected]="i == selectedImageIndex"
           [src]="contentImage.image.publicUrl"
           alt=""
           class="swiper-slide"
         />
       </div>
     </div>
+    <div
+      *ngIf="
+        (imageActive && !(contentImages?.length > 0)) ||
+        (!imageActive && !(styleImages?.length > 0))
+      "
+      class="loading-indicator"
+    >
+      <img src="/assets/icons/loading-anim.svg" alt="lädt Bilder" />
+    </div>
+
     <button
       [class.low-visibility]="!styleSelected"
       class="finished-btn"

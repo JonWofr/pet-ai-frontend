@@ -11,7 +11,11 @@ export abstract class DataService<T> {
     return this.http.get<T>(this.url + '/' + id);
   }
 
-  create(resource: any) {
+  createJson(resource: any) {
+    return this.http.post<T>(this.url, JSON.stringify(resource));
+  }
+
+  createFormData(resource: FormData) {
     return this.http.post<T>(this.url, resource);
   }
 }

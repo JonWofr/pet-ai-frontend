@@ -6,29 +6,20 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./upload-modal.component.scss'],
 })
 export class UploadModalComponent implements OnInit {
-  @Output() uploadedImage = new EventEmitter<boolean>();
+  @Output() uploadedImage = new EventEmitter<File | null>();
 
   constructor() {}
 
-  path?: any;
-
   ngOnInit(): void {}
 
+  dataProtectionChecked = false;
+
   onChange(event: any) {
-    console.log(event.target.files[0]);
-
     let imageFile = event.target.files[0];
+    this.uploadedImage.emit(imageFile);
+  }
 
-    let reader = new FileReader();
-    reader.addEventListener('loadend', (progress) => {
-      console.log(progress.target?.result);
-      this.path = progress.target?.result;
-    });
-
-    reader.readAsDataURL(imageFile);
-
-    // console.log(readFile(event.target.files[0]));
-    this.path = event.target.result;
-    this.uploadedImage.emit(true);
+  onClose() {
+    this.uploadedImage.emit(null);
   }
 }
