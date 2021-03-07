@@ -1,0 +1,130 @@
+@import "../../../../../../colors.scss";
+
+.host-wrapper {
+  background-color: $alice-blue;
+  border-radius: 2rem 2rem 0 0;
+  padding-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.digital-info-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1080px;
+
+  .digital-product-info {
+    width: 48%;
+    background-color: $secondary-color;
+    border-radius: 0.8rem;
+    h3 {
+      color: white;
+      font-family: pf-reg;
+      font-weight: 400;
+      font-size: 1.4rem;
+      padding-top: 1.8rem;
+      padding-bottom: 1.8rem;
+    }
+  }
+}
+
+.info-content {
+  transform: translateY(1px);
+  border-radius: 0.8rem;
+  background-color: white;
+  padding: 2rem 0;
+  color: $secondary-color;
+  h4 {
+    font-size: 1.8rem;
+    font-family: m-bold;
+    margin-bottom: 1.2rem;
+  }
+  p {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    font-family: m-reg;
+    font-size: 1.2rem;
+    max-width: 29rem;
+    span {
+      font-family: m-light-it;
+      font-size: 1rem;
+    }
+  }
+}
+
+.physical-product-info-swiper {
+  max-width: 1080px;
+  padding-bottom: 4rem;
+  .swiper-slide {
+    border-radius: 0.8rem;
+    .product-info-wrapper {
+      background-color: white;
+      text-align: center;
+      color: $secondary-color;
+      img {
+        border-radius: 0.8rem;
+        width: 100%;
+        max-height: 200px;
+        object-fit: cover;
+      }
+
+      .info-content {
+        padding: 3rem 2rem;
+        h3 {
+          font-family: pf-reg;
+          font-weight: 400;
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+        }
+        hr {
+          width: 2rem;
+          margin-bottom: 1.5rem;
+          margin-left: auto;
+          margin-right: auto;
+          border: $primary-color 1px solid;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 400px) {
+  .physical-product-info-swiper {
+    .swiper-slide {
+      .product-info-wrapper {
+        img {
+          max-height: 350px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .physical-product-info-swiper {
+    .swiper-slide {
+      .product-info-wrapper {
+        display: flex;
+        img {
+          width: 50%;
+          max-height: 500px;
+        }
+        .info-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

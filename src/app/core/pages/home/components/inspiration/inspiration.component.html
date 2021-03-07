@@ -1,9 +1,5 @@
 <shared-headline>Inspiration</shared-headline>
-<div id="inspiration" class="res-grid">
-  <shared-product-box></shared-product-box>
-  <shared-product-box></shared-product-box>
-  <shared-product-box></shared-product-box>
-  <shared-product-box></shared-product-box>
-  <shared-product-box></shared-product-box>
-  <shared-product-box></shared-product-box>
+
+<div id="inspiration" class="res-grid container">
+  <shared-product-box *ngFor="let column of columns"></shared-product-box>
 </div>

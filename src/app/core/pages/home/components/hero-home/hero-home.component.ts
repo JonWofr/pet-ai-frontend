@@ -3,38 +3,37 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'home-hero',
   templateUrl: './hero-home.component.html',
-  styleUrls: ['./hero-home.component.scss']
+  styleUrls: ['./hero-home.component.scss'],
 })
 export class HeroHomeComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
-    this.setHeroHeight()
-    this.createObserver()
+    this.setHeroHeight();
+    this.createObserver();
     setTimeout(() => {
       //this.isCallToActionSticky = true
-    }, 2000)
+    }, 2000);
   }
 
   setHeroHeight() {
-    const navHeight = document.getElementsByClassName('nav')[0].clientHeight
-    document.getElementById('hero-wrapper')!.style.height = String(window.innerHeight - navHeight) + 'px'
+    const navHeight = document.getElementsByClassName('nav')[0].clientHeight;
+    document.getElementById('hero-wrapper')!.style.height =
+      String(window.innerHeight - navHeight) + 'px';
   }
 
-  isCallToActionSticky = false
-
+  isCallToActionSticky = false;
 
   createObserver() {
     const options = {
       rootMargin: '0px',
       threshold: 0.5,
     };
-  
+
     const observer = new IntersectionObserver(
       (entries: IntersectionObserverEntry[]) => {
         entries.forEach((entry: IntersectionObserverEntry) => {
-          this.isCallToActionSticky = !entry.isIntersecting
+          this.isCallToActionSticky = !entry.isIntersecting;
         });
       },
       options
@@ -42,8 +41,5 @@ export class HeroHomeComponent implements OnInit {
     document.querySelectorAll('.button-hero-flat').forEach((value) => {
       observer.observe(value);
     });
-
   }
-
-  
 }

@@ -1,25 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { slideInOutRight,slideInOutLeft } from 'src/app/shared/animations';
+import { slideInOutRight, slideInOutLeft } from 'src/app/shared/animations';
 
 @Component({
   selector: 'hiw-step-section',
   templateUrl: './step-section.component.html',
   styleUrls: ['./step-section.component.scss'],
-  animations: [
-    slideInOutRight,
-    slideInOutLeft
-  ]
+  animations: [slideInOutRight, slideInOutLeft],
 })
 export class StepSectionComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  animEnd(lul: any) {
-    console.log((lul.element.parentElement.nextSibling as HTMLElement).classList.add('visible'))
-  }
+  ngOnInit(): void {}
 }
-
-

@@ -138,10 +138,7 @@
       padding: 0;
       padding-right: 1rem;
       text-align: left;
-      opacity: 0;
-      &.visible {
-        opacity: 1;
-      }
+      opacity: 1;
       &.right {
         padding-left: 1rem;
         padding-right: 0;
@@ -154,7 +151,7 @@
         position: absolute;
         right: 50%;
         transform: translateX(50%);
-        background-color: $alice-blue;
+        background-color: white;
         .bubble {
           background-color: $primary-color;
           display: block;

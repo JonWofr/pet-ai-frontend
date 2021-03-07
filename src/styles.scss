@@ -24,7 +24,7 @@ html {
 }
 
 body {
-  background-color: $alice-blue;
+  background-color: white;
   height: 100%;
   &.fixed {
     overflow: hidden;
@@ -211,16 +211,10 @@ $grid-breakpoints: (
   }
 }
 
-@media (min-width: 2000px) {
-  html {
-    font-size: 18px;
-  }
-}
-
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .container {
-    padding: 1rem 5rem 0 5rem;
+    padding: 1rem 2rem 0 2rem;
   }
 }
 
@@ -230,4 +224,16 @@ $grid-breakpoints: (
 
 // XX-Large devices (larger desktops, 1400px and up)
 @media (min-width: 1400px) {
+}
+
+@media (min-width: 1500px) {
+  .container {
+    padding: 1rem 5rem 0 5rem;
+  }
+}
+
+@media (min-width: 2000px) {
+  html {
+    font-size: 18px;
+  }
 }

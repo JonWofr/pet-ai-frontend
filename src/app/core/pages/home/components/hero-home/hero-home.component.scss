@@ -148,9 +148,10 @@ button.sticky {
 
   button {
     width: 400px;
-    right: calc(100% - 400px - 5rem);
+    right: calc(100% - 400px - 2rem);
+    bottom: calc(100vh - 5rem);
     &.sticky {
-      right: 5rem;
+      right: 2rem;
       bottom: 2rem;
     }
   }
@@ -164,6 +165,15 @@ button.sticky {
     &:hover {
       opacity: 0;
       transition: 500ms;
+    }
+  }
+}
+
+@media (min-width: 1500px) {
+  button {
+    right: calc(100% - 400px - 5rem);
+    &.sticky {
+      right: 5rem;
     }
   }
 }

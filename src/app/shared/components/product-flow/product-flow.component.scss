@@ -3,11 +3,12 @@
   display: block;
   width: 100%;
   position: relative;
-  background-color: white;
-  margin-bottom: 10rem;
+  background-color: $secondary-color;
 }
 
 .product-flow-wrapper {
+  background-color: white;
+  border-radius: 2rem 2rem 0 0;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -72,22 +73,19 @@
   }
 }
 
-.wave {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  z-index: -1;
-  object-fit: fill;
-  transform: translateY(-95%);
-  &:last-child {
-    top: unset;
-    bottom: -100;
-    transform: rotate(-180deg) translateY(2px);
-  }
-}
+// .wave {
+//   position: absolute;
+//   width: 100%;
+//   left: 0;
+//   z-index: -1;
+//   object-fit: fill;
+//   transform: translateY(-95%);
+//   &:last-child {
+//     top: unset;
+//     bottom: -100;
+//     transform: rotate(-180deg) translateY(2px);
+//   }
+// }
 
 @media (min-width: 1224px) {
-  :host {
-    margin-bottom: 14rem;
-  }
 }
