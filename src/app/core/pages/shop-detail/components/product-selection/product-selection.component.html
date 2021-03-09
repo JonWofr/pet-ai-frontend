@@ -4,7 +4,10 @@
     {{ productSelectionForm.value.material | titlecase }}
     {{ productSelectionForm.value.size }}cm
   </h4>
-  <h4 class="selected-product-price">24,99 €</h4>
+  <h4 class="selected-product-price">
+    <span>inkl. MwSt.</span>
+    {{ 49.99 * productSelectionForm.value.quantity | currency: "EUR":"symbol" }}
+  </h4>
 </div>
 <hr />
 
@@ -41,18 +44,18 @@
   </div>
   <div class="selection-section" style="margin-bottom: 2rem">
     <label class="selector-btn"
-      >20x20cm
-      <input type="radio" value="20x20" formControlName="size" />
-      <div class="check-indicator"></div>
-    </label>
-    <label class="selector-btn"
       >30x30cm
       <input type="radio" value="30x30" formControlName="size" />
       <div class="check-indicator"></div>
     </label>
-    <label class="selector-btn"
+    <label class="selector-btn disabled"
       >40x40cm
-      <input type="radio" value="40x40" formControlName="size" />
+      <input
+        type="radio"
+        value="40x40"
+        formControlName="size"
+        [disabled]="true"
+      />
       <div class="check-indicator"></div>
     </label>
     <label class="selector-btn"

@@ -3,7 +3,6 @@
 .product-preview-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   width: 100%;
   swiper {
     position: relative;
@@ -12,10 +11,14 @@
     width: 100%;
     border-radius: 5px;
   }
+  .gallery-top {
+    margin-bottom: 1rem;
+  }
 }
 
 .thumbs-wrapper {
   position: relative;
+
   .thumb-navigation-button {
     top: 50%;
     transform: translateY(-50%);
@@ -60,9 +63,9 @@
   background-color: transparent;
   border: 2px solid $secondary-color;
   font-family: m-bold;
-  font-size: 1rem;
+  font-size: 1.4rem;
   color: $secondary-color;
-  padding: 0.8rem;
+  padding: 0.5rem;
   border-radius: 5px;
   cursor: pointer;
   transition: 200ms;
@@ -71,8 +74,8 @@
     fill: $secondary-color;
     margin-right: 0.6rem;
     transition: 200ms;
-    width: 1.3rem;
-    height: 1.3rem;
+    height: 2rem;
+    width: 2rem;
   }
 
   &:hover {
@@ -81,7 +84,6 @@
 
     svg {
       fill: aliceblue;
-      margin-right: 0.6rem;
     }
   }
 }

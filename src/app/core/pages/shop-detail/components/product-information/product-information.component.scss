@@ -7,14 +7,21 @@
 
 .info-navigation {
   display: flex;
-  gap: 20px;
   h4 {
     font-family: m-bold;
-    font-size: 14px;
+    font-size: 1.2rem;
     padding-bottom: 5px;
     cursor: pointer;
     transition: 100ms;
     color: $secondary-color;
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
   }
   h4.selected {
     border-bottom: $secondary-color 3px solid;

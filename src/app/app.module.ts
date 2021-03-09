@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { PageModule } from './core/pages/page.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {LayoutModule} from '@angular/cdk/layout';
+import { LayoutModule } from '@angular/cdk/layout';
 
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './core/components/nav-bar/nav-bar.component';
@@ -25,9 +25,9 @@ import { CartItemComponent } from './core/components/cart-item/cart-item.compone
     PageModule,
     BrowserAnimationsModule,
     LayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [{ provide: LOCALE_ID, useValue: 'de' }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

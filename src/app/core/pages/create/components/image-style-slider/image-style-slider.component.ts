@@ -52,6 +52,8 @@ export class ImageStyleSliderComponent implements OnInit {
 
   _isUploadingImage: boolean;
 
+  showAttentionSeekerUpload = true;
+
   @Input() set isUploadingImage(uploading: boolean) {
     if (this.imgSwiper) {
       this.imgSwiper.slideTo(0);
@@ -76,6 +78,7 @@ export class ImageStyleSliderComponent implements OnInit {
 
   openUploadModal() {
     this.addImageBtnClicked.emit();
+    this.showAttentionSeekerUpload = false;
   }
 
   isHorizontalMode = true;
