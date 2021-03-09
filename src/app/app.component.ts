@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import {
   NavigationEnd,
   NavigationStart,
@@ -15,8 +16,23 @@ import { slideInOutLeft } from './shared/animations';
   styleUrls: ['./app.component.scss'],
   animations: [slideInRoutingAnimation],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'petai-frontend';
+
+  constructor(private auth: AngularFireAuth) {}
+
+  ngOnInit(): void {
+    this.auth.onAuthStateChanged((user) => {
+      if (!user) {
+        console.log('Signing in user');
+        this.auth.signInAnonymously();
+        console.log('User signed in');
+      } else {
+        console.log('User already signed in');
+        console.log(user);
+      }
+    });
+  }
 
   prepareRoute(outlet: RouterOutlet) {
     return (

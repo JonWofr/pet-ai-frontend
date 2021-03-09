@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "petai-bdd53"
+  },
+  "targets": {
+    "petai-bdd53": {
+      "hosting": {
+        "petai-frontend": [
+          "petai-bdd53"
+        ]
+      }
+    }
   }
 }
