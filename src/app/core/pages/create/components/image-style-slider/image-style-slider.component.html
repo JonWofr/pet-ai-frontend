@@ -76,7 +76,7 @@
     </div>
 
     <button
-      [class.low-visibility]="!styleSelected"
+      [class.low-visibility]="selectedImageIndex !== undefined"
       class="finished-btn"
       (click)="finished()"
     >

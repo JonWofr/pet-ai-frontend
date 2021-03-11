@@ -6,5 +6,4 @@ export interface StyleImage {
   image: Image;
   name: string;
   artist: string;
-  userId: string | null;
 }

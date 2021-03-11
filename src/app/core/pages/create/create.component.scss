@@ -21,6 +21,14 @@ button.finished-btn {
   display: none;
 }
 
+.applying-style {
+  transition: 500ms;
+  background-color: black;
+  .selected-image {
+    opacity: 0.5;
+  }
+}
+
 @media (min-width: 720px) {
   .container {
     padding-left: 10%;
@@ -58,6 +66,10 @@ button.finished-btn {
     width: 40%;
     max-width: 25rem;
     order: 1;
+  }
+
+  .square-ratio {
+    border-radius: 5px;
   }
 
   img {

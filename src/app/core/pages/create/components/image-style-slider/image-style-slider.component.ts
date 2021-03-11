@@ -47,6 +47,9 @@ export class ImageStyleSliderComponent implements OnInit {
   @Input() selectedImageIndex = 0;
   @Output() selectedImageIndexChange = new EventEmitter<number>();
 
+  @Input() selectedStyleIndex: number;
+  @Output() selectedStyleIndexChange = new EventEmitter<number>();
+
   @Input() contentImages: ContentImage[] = [];
   @Input() styleImages: StyleImage[] = [];
 
@@ -69,6 +72,13 @@ export class ImageStyleSliderComponent implements OnInit {
     return this._isUploadingImage;
   }
 
+  updateSelectedStyleIndex(index: number) {
+    if (index !== undefined) {
+      this.selectedStyleIndex = index;
+      this.selectedStyleIndexChange.emit(index);
+    }
+  }
+
   updateSelectedImageIndex(index: number) {
     if (index !== undefined) {
       this.selectedImageIndex = index;
@@ -87,7 +97,6 @@ export class ImageStyleSliderComponent implements OnInit {
   styleSwiper: Swiper;
 
   imageActive = true;
-  styleSelected = false;
 
   ngOnInit(): void {}
 
@@ -136,8 +145,7 @@ export class ImageStyleSliderComponent implements OnInit {
         },
         on: {
           click: (swiper: Swiper) => {
-            console.log(swiper.clickedIndex);
-            this.styleSelected = true;
+            this.updateSelectedStyleIndex(swiper.clickedIndex);
           },
           afterInit: () => {
             setTimeout(() => {
@@ -155,7 +163,7 @@ export class ImageStyleSliderComponent implements OnInit {
   }
 
   finished() {
-    if (this.styleSelected) {
+    if (this.selectedStyleIndex !== undefined) {
       this.route.navigate(['shop/1']);
     } else {
       alert('please select a style first');

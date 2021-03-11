@@ -1,7 +1,12 @@
 <div class="gray-background-box"></div>
 <div class="container">
-  <div class="square-ratio">
-    <img [src]="imageSrc" alt="" />
+  <div class="square-ratio" [class.applying-style]="isApplyingStyle">
+    <img class="selected-image" [src]="imageSrc" alt="" />
+    <img
+      *ngIf="isApplyingStyle"
+      src="/assets/icons/loading-spinner.svg"
+      alt=""
+    />
   </div>
   <button class="finished-btn">Fertig</button>
 </div>
@@ -11,6 +16,7 @@
   [styleImages]="styleImages"
   [isUploadingImage]="isUploadingImage"
   (selectedImageIndexChange)="imageSelectionChanged($event)"
+  (selectedStyleIndexChange)="applyStyle($event)"
   (addImageBtnClicked)="openUploadModal()"
   class="slider"
 ></create-image-style-slider>

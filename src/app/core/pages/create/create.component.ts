@@ -4,6 +4,7 @@ import { ContentImage } from '../../models/content-image.model';
 import { StyleImage } from '../../models/style-image.model';
 import { ContentImageService } from '../../services/content-image.service';
 import { StyleImageService } from '../../services/style-image.service';
+import { StylizedImageService } from '../../services/stylized-image.service';
 
 @Component({
   selector: 'page-create',
@@ -14,16 +15,21 @@ import { StyleImageService } from '../../services/style-image.service';
 export class CreateComponent implements OnInit {
   constructor(
     private contentImageService: ContentImageService,
-    private styleImageService: StyleImageService
+    private styleImageService: StyleImageService,
+    private stylizedImageService: StylizedImageService
   ) {}
 
   imageSrc = '/assets/icons/loading-anim.svg';
   showUploadModal = false;
 
   contentImages: ContentImage[];
+  selectedContentImageIndex = 0;
+
   styleImages: StyleImage[];
+  selectedStyleImageIndex: number;
 
   isUploadingImage = false;
+  isApplyingStyle = false;
 
   ngOnInit(): void {
     this.contentImageService.getAll().subscribe((response) => {
@@ -32,12 +38,12 @@ export class CreateComponent implements OnInit {
     });
     this.styleImageService.getAll().subscribe((response) => {
       this.styleImages = response;
-      console.log(response);
     });
   }
 
   imageSelectionChanged(index: number) {
     this.imageSrc = this.contentImages[index].image.publicUrl;
+    this.selectedContentImageIndex = index;
   }
 
   openUploadModal() {
@@ -68,12 +74,30 @@ export class CreateComponent implements OnInit {
     }
   }
 
-  readFile(file: Blob) {
-    //   let reader = new FileReader();
-    //   reader.addEventListener('loadend', (progress) => {
-    //     const image = progress.target?.result as string;
-    //     this.uploadedImage.emit(image);
-    // });
-    //   reader.readAsDataURL(file);
+  applyStyle(index: number) {
+    if (index !== undefined && !this.isApplyingStyle) {
+      this.selectedStyleImageIndex = index;
+      const contentImageId = this.contentImages[this.selectedContentImageIndex]
+        .id;
+      const styleImageId = this.styleImages[index].id;
+      const name = this.contentImages[this.selectedContentImageIndex].name;
+
+      if (
+        contentImageId !== undefined &&
+        styleImageId !== undefined &&
+        name !== undefined
+      ) {
+        const resource = {
+          contentImageId: contentImageId,
+          styleImageId: styleImageId,
+          name: name,
+        };
+        this.isApplyingStyle = true;
+        this.stylizedImageService.createJson(resource).subscribe((response) => {
+          this.imageSrc = response.image.publicUrl;
+          this.isApplyingStyle = false;
+        });
+      }
+    }
   }
 }

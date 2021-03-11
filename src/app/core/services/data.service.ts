@@ -57,7 +57,7 @@ export abstract class DataService<T> {
     return new Observable<T>((subscriber) => {
       this.getIdToken().then((idToken) => {
         this.http
-          .post<T>(this.url, JSON.stringify(resource), {
+          .post<T>(this.url, resource, {
             headers: { Authorization: 'Bearer ' + idToken },
           })
           .subscribe(
